@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>10 лет Хонда Максимум: снижаем цены на бестселлер!</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="img/favicon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+	<link rel="manifest" href="img/favicon/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
+
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#000">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#000">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#000">
+
+	<style>body { opacity: 0; overflow-x: hidden; } html { background-color: #fff; }</style>
+	<script src="js/sets.js"></script>
+	<script src="js/libs.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoMgfWKqcPPgOex-pMvQ74jRJweHqEk3I"></script>
+
+</head>
+
+<body>
+	<!-- Google Analytics START -->
+	<!-- PUT YOUR CODE HERE -->
+	<!-- Google Analytics END -->
+
+	<!-- Yandex.Metrika counter -->
+	<script type="text/javascript">
+		if(sets.ya_metrika != 0){
+			(function (d, w, c) {
+				(w[c] = w[c] || []).push(function() {
+					try {
+						w.window['yaCounter' + sets.ya_metrika] = new Ya.Metrika({
+							id: sets.ya_metrika,
+							clickmap:true,
+							trackLinks:true,
+							accurateTrackBounce:true,
+							webvisor:true
+						});
+					} catch(e) { }
+				});
+				var n = d.getElementsByTagName("script")[0],
+				s = d.createElement("script"),
+				f = function () { n.parentNode.insertBefore(s, n); };
+				s.type = "text/javascript";
+				s.async = true;
+				s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+				if (w.opera == "[object Opera]") {
+					d.addEventListener("DOMContentLoaded", f, false);
+				} else { f(); }
+			})(document, window, "yandex_metrika_callbacks");
+		}
+	</script>
+	<template id="ya-metrika"></template>
+	<!-- /Yandex.Metrika counter -->
+
+	<div id="app">
+		<header>
+			<div class="container">
+				<div class="logo">
+					<a href="#" v-on:click.prevent="scrollTo('main-offer')">
+						<img src="img/logo.png" alt="Honda" class="img-responsive">
+					</a>
+				</div>
+				<div class="nav">
+					<nav>
+						<ul>
+							<li><a href="#" v-on:click.prevent="scrollTo('main-offer')">Акция</a></li>
+							<li><a href="#" v-on:click.prevent="scrollTo('available')">Авто в наличии</a></li>
+							<li><a href="#" v-on:click.prevent="scrollTo('credit')">Кредитование</a></li>
+							<li><a href="#" v-on:click.prevent="scrollTo('benefits')">Преимущества ДЦ</a></li>
+							<li><a href="#" v-on:click.prevent="scrollTo('test-drive')">Тест-драйв</a></li>
+							<li><a href="#" v-on:click.prevent="scrollTo('contacts')">Контакты</a></li>
+						</ul>
+					</nav>
+				</div>
+				<div class="diler-logo">
+					<img src="img/logo-diler.jpg" alt="Максимум" class="img-responsive">
+				</div>
+				<div class="burger" v-on:click="toggleMenu">
+					<div class="x"></div>
+					<div class="y"></div>
+					<div class="z"></div>
+				</div>
+				<div class="header-contacts">
+					<my-phone></my-phone>
+					<span class="popup-link"><a href="#" v-on:click.prevent="openPopup">Заказать обратный звонок</a></span>
+				</div>
+			</div>
+		</header>
+		<main>
+			<section id="main-offer">
+				<div class="container">
+					<h1>Распродажа стока 2018 года</h1>
+					<h2>Снижаем цены на бестселлер!</h2>
+					<p v-cloak>Новая Honda CR-V от {{localeNumber(minPrice)}}&nbsp;&#8381;<br>Не упусти свой шанс!</p>
+					<div class="benefits">
+						<div class="benefit">
+							<img src="img/main-offer-benefit-1.svg" alt="Дарим подарки" class="img-responsive">
+							<p>Дарим подарки</p>
+						</div>
+						<div class="benefit">
+							<img src="img/main-offer-benefit-2.svg" alt="Суммируем скидки" class="img-responsive">
+							<p>Суммируем скидки</p>
+						</div>
+						<div class="benefit">
+							<img src="img/main-offer-benefit-3.svg" alt="В наличии с ПТС" class="img-responsive">
+							<p>В наличии с ПТС</p>
+						</div>
+					</div>
+					<div class="btn-block">
+						<a href="#" class="btn" v-on:click.prevent="openPopup">Узнать подробнее</a>
+					</div>
+				</div>
+			</section>
+			<section id="offer">
+				<div class="container">
+					<h2 v-cloak>Снижаем цены на бестселлер: <span class="bold">Honda CR-V от {{localeNumber(minPrice)}}&nbsp;рублей</span></h2>
+					<h3>Успейте купить до резкого повышения цен в 2018 году!</h3>
+					<div class="cols">
+						<div class="text-block">
+							<p>Узнайте полные условия специального предложения, программ лизинга, кредитования и trade-in по телефону или закажите бесплатный <a href="#" v-on:click.prevent="openPopup">обратный звонок</a>.</p>
+						</div>
+						<div class="btn-block">
+							<a href="#" class="btn" v-on:click.prevent="openPopup">Узнать подробнее</a>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="available" v-cloak>
+				<div class="container">
+					<h2><span class="bold">Выберите</span> Ваш Honda</h2>
+					<p>автомобили c подарками в автосалоне Максимум в наличии</p>
+					<div class="tabs">
+						<div v-for="(model, key) in data.models" :class="[pickedModel === model.id ? 'active' : '', 'tab']" v-on:click="changeModel(model.id, key)">
+							<div class="image">
+								<img :src="'img/' + model.id + '.png'" :alt="model.id" class="img-responsive">
+							</div>
+							<div class="card">
+								<div class="head">
+									<p>{{model.name}}</p>
+								</div>
+								<div class="body">
+									<p>Цена от: <span class="value">{{localeNumber(minimum(model.cars, 'price'))}}</span>&nbsp;руб.</p>
+									<p>Выгода до: <span class="value">{{localeNumber(maximum(model.cars, 'benefit'))}}</span>&nbsp;руб.</p>
+									<p>Подарок: 500 л. бензина, или Доп. оборудование или ТО</p>
+									<p>Выгода по Trade-In: <span class="value">100&nbsp;000</span>&nbsp;руб.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="table">
+						<div class="table-row heading">
+							<div class="model"><span>Модель</span></div>
+							<div class="complectation"><span>Комплектация</span></div>
+							<div class="price"><span>Цена</span></div>
+							<div class="benefit"><span>Выгода</span></div>
+							<div class="button">&nbsp;</div>
+						</div>
+						<car-row inline-template v-for="car in data.models[pickedModelKey].cars" :model-id="data.models[pickedModelKey].id" :model-name="data.models[pickedModelKey].name" :car="car" :all-colors="data.colors" v-bind:key="car.complectation" :openPopup="openPopup">
+							<div class="table-row">
+								<div class="model">
+									<img :src="'img/cars/' + modelId + '-' + activeColor + '.jpg'" alt="Honda" class="img-responsive">
+									<p>{{modelName}}</p>
+								</div>
+								<div class="complectation">
+									<div class="colors">
+										<div v-for="color in car.colors" :class="['color', color]" v-on:mouseover="changeColor(color)"></div>
+									</div>
+									<p class="color-name">{{colorName(activeColor)}}</p>
+									<p>{{car.complectation}}</p>
+								</div>
+								<div class="price">
+									<p>от <span class="value">{{localeNumber(car.price)}}</span> руб.</p>
+									<p class="old-price">от {{localeNumber(car.price + car.benefit)}} руб.</p>
+								</div>
+								<div class="benefit">
+									<p>выгода <span class="value">{{localeNumber(car.benefit)}}</span> руб.</p>
+								</div>
+								<div class="button">
+									<a href="#" class="btn" v-on:click.prevent="$parent.openPopup()">Получить спецпредложение</a>
+								</div>
+							</div>
+						</car-row>
+					</div>
+					<div class="promo-block">
+						<div class="text">
+							<h3>Не нашли нужную комплектацию?</h3>
+							<p>Позвоните нам по телефону <my-phone></my-phone><br>или закажите <a href="#" v-on:click.prevent="openPopup">обратный звонок</a>, и мы подберём новый Honda именно Вам.</p>
+						</div>
+						<div class="image">
+							<img src="img/promo-block-img.png" alt="Honda CRV" class="img-responsive">
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="credit">
+				<div class="container">
+					<h2><span class="bold">Выгодные</span> программы кредитования <span class="unbreakable">от 9&nbsp;000&nbsp;р./мес.</span></h2>
+					<p class="upper">Потребительский кредит</p>
+					<p>до&nbsp;<span class="bold">3&nbsp;000&nbsp;000</span>&nbsp;рублей размер кредита</p>
+					<p>от <span class="bold">0%</span> первоначальный взнос</p>
+					<p>до <span class="bold">7&nbsp;лет</span> срок кредита</p>
+					<p><span class="bold">Без</span> залога и поручителя</p>
+					<p><span class="bold">0%</span> переплата</p>
+					<div class="btn-block">
+						<a href="#" class="btn" v-on:click.prevent="openPopup">Рассчитать кредит</a>
+					</div>
+					<p class="last">Узнайте больше о кредитных предложениях по&nbsp;телефону <my-phone></my-phone> или <a href="#" v-on:click.prevent="openPopup">закажите&nbsp;обратный&nbsp;звонок</a></p>
+				</div>
+			</section>
+			<section id="benefits">
+				<div class="container">
+					<h2><span class="bold">6 причин</span> купить Honda у&nbsp;официального дилера «Максимум»</h2>
+					<div class="benefits">
+						<div class="benefit">
+							<div class="image"></div>
+							<p>10 лет<br>Хонда Максимум</p>
+						</div>
+						<div class="benefit">
+							<div class="image"></div>
+							<p>Кредит без первоначального взноса</p>
+						</div>
+						<div class="benefit">
+							<div class="image"></div>
+							<p>Большой выбор автомобилей в наличии</p>
+						</div>
+						<div class="benefit">
+							<div class="image"></div>
+							<p>Модели с ПТС в наличии</p>
+						</div>
+						<div class="benefit">
+							<div class="image"></div>
+							<p v-cloak>Максимальная выгода до {{localeNumber(maxBenefit)}} руб.</p>
+						</div>
+						<div class="benefit">
+							<div class="image"></div>
+							<p>Комфортные условия для Вас в ДЦ</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="test-drive">
+				<div class="container">
+					<h2>Откройте для себя <span class="bold">безупречный стиль</span> Honda</h2>
+					<p>Запишитесь на тест-драйв нового автомобиля Honda CR-V</p>
+					<div class="btn-block">
+						<a href="#" class="btn" v-on:click.prevent="openPopup">Записаться на тест-драйв</a>
+					</div>
+				</div>
+			</section>
+			<section id="offer-secondary">
+				<div class="container">
+					<h2 v-cloak>Снижаем цены на бестселлер: <span class="bold">Honda CR-V от {{localeNumber(minPrice)}}&nbsp;рублей</span></h2>
+					<h3>Успейте купить до резкого повышения цен в 2018 году!</h3>
+					<div class="cols">
+						<div class="text-block">
+							<p>Узнайте полные условия специального предложения, программ лизинга, кредитования и trade-in по телефону или закажите бесплатный <a href="#" v-on:click.prevent="openPopup">обратный звонок</a>.</p>
+							<div class="btn-block">
+								<a href="#" class="btn" v-on:click.prevent="openPopup">Узнать подробнее</a>
+							</div>
+						</div>
+						<div class="image-block">
+							<img src="img/secondary-offer-img.png" alt="Hondas" class="img-responsive">
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="contacts">
+				<div class="container">
+					<div class="contacts-block">
+						<div class="logo-row">
+							<div class="logo">
+								<img src="img/logo-diler.jpg" alt="Максимум" class="img-responsive">
+							</div>
+							<div class="text">
+								<p>Автосалон «Максимум Лахта», официальный дилер Honda.</p>
+							</div>
+						</div>
+						<p>Санкт-Петербург, Торфяная дорога 8/3 (рядом со станцией метро «Старая Деревня»)<br><my-phone></my-phone></p>
+						<div class="btn-block">
+							<a href="#" class="btn" v-on:click.prevent="openPopup">Заказать звонок</a>
+						</div>
+					</div>
+				</div>
+				<div id="map"></div>
+			</section>
+		</main>
+		<footer>
+			<div class="container">
+				<p><a href="#" v-on:click.prevent="openPopup('agreement')">Согласие на обработку персональных данных</a></p>
+			</div>
+		</footer>
+		<!-- POPUPS START -->
+		<div id="popup" :class="popupIsOpen ? 'open' : ''">
+			<div class="body">
+				<div class="close" title="Закрыть" v-on:click="closePopup"></div>
+				<template v-if="!popupAgreement">
+					<div class="image">
+						<p class="bold">Снижаем цены на бестселлер!</p>
+					</div>
+					<div class="content">
+						<template v-if="(phoneSended == 'not') || (phoneSended == 'sending')">
+							<p class="bold">Заказать звонок</p>
+							<form method="POST" name="super" action="#" v-on:submit.prevent="sendForm()">
+								<div class="form-elements">
+									<div class="input-phone">
+										<input type="tel" :class="[placeholderPhone === 'Укажите Ваш телефон' ? 'redput' : '', 'input']" name="phone" v-model="inputtedPhone" v-input-mask data-inputmask="'mask': '+7 (999) 999-99-99'" :placeholder="placeholderPhone">
+										<div class="circle-loader">
+											<div class="checkmark draw"></div>
+										</div>
+									</div>
+									<div class="submit">
+										<button type="submit" v-bind:class="[(phoneSended == 'sending') ? 'sending' : '', 'btn']">
+											<span class="text">Позвонить мне</span>
+											<span class="progress"></span>
+										</button>
+									</div>
+								</div>
+							</form>
+						</template>
+						<template v-if="phoneSended == 'sended'">
+							<p class="bold">Спасибо за Вашу заявку!</p>
+							<p v-if="workingHours">Сейчас совершается бесплатный звонок из отдела продаж.<br>Для получения информации уточните менеджеру интересующий Вас вопрос.</p>
+							<p v-else>Отдел продаж уже закончил работу.<br>Вам придёт бесплатный звонок из отдела продаж. Точное время звонка придёт Вам по SMS. Для получения информации, пожалуйста, уточните менеджеру интересующий Вас вопрос.</p>
+							<div class="btn success" v-on:click="closePopup">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37.54 29.88"><path d="M31.81,0L13,18.55l-7.3-7.2L0,17,13,29.89,37.55,5.69Z" transform="translate(0 -0.01)"/></svg>
+							</div>
+						</template>
+					</div>
+				</template>
+				<template v-else>
+					<div class="content">
+						<p class="bold">Политика о конфиденциальности и защите персональных данных</p>
+						<p>Настоящая Политика конфиденциальности и защиты персональных данных (далее - Политика) применяется к сайту http://www.maximum-honda.ru (далее - сайт).</p>
+
+						<p>Используя этот сайт и/или предоставляя ЗАО «Карт Бланш» персональные данные, Вы выражаете согласие на обработку своих персональных данных на условиях, предусмотренных настоящей Политикой. </p>
+
+						<p>Если вы не согласны с настоящей Политикой, просим Вас не пользоваться этим сайтом и не предоставлять ЗАО «Карт Бланш» свои персональные данные. </p>
+
+						<p>Являясь одной из ведущих российских компаний, ЗАО «Карт Бланш» (официальный дилер Honda (Хонда) в Санкт-Петербурге - автосалон «Максимум Лахта»), уважает право человека на неприкосновенность частной жизни, хорошо понимая необходимость обеспечения конфиденциальности и защиты персональных данных. </p>
+
+						<p>Мы надеемся, что настоящая Политика поможет Вам понять, какого рода информацию мы собираем и каким образом эта информация обрабатывается. </p>
+
+						<p>Эта Политика распространяется на информацию, собранную в связи с предлагаемыми ЗАО «Карт Бланш» продуктами и услугами либо при ином взаимодействии. Для конкретных продуктов или услуг ЗАО «Карт Бланш» может публиковать дополнительные или измененные положения о конфиденциальности, такие положения имеют преимущественную силу перед этой Политикой в отношении любых расхождений между ними. </p>
+
+						<p>Наши продукты и услуги могут содержать ссылки на сайты других компаний и иные услуги третьих лиц, которые имеют собственную политику конфиденциальности. ЗАО «Карт Бланш» не несет ответственности за обеспечение конфиденциальности или содержание любых таких сайтов. </p>
+
+						<p><b>Собираемая информация</b></p>
+
+						<p>Как правило, мы собираем Ваши персональные данные, когда вы делаете покупку, используете или регистрируетесь для использования наших услуг, участвуете в рекламной акции, либо иными способами взаимодействуете с ЗАО «Карт Бланш».</p>
+
+						<p>Мы производим сбор персональных данных только с вашего ведома или согласия. Ниже приводятся примеры категорий, к которым относятся собираемые данные.</p>
+
+						<p><b>Техническая информация</b></p>
+
+						<p>В большинстве случаев для посещения сайта или использования наших продуктов и услуг не нужно сообщать нам, кто вы такой. Тем не менее, стандартная процедура использования наших услуг обычно предполагает сбор определенной технической информации. </p>
+
+						<p><b>Информация, которую вы нам предоставляете</b></p>
+
+						<p>Когда вы регистрируетесь для пользования нашими услугами, участвуете в рекламной акции или иным образом взаимодействуете с ЗАО «Карт Бланш», мы можем попросить Вас предоставить такую информацию, как ваше имя и фамилия, адрес электронной почты, почтовый адрес, а также имена пользователей, пароли и другие аналогичные учетные данные, которые применяются для аутентификации пользователей и подтверждения их действий или могут потребоваться для предоставления запрошенных вами продуктов и услуг либо для связи с Вами.</p>
+
+						<p>Мы также можем собирать другую предоставляемую Вами информацию, например, о Вашем согласии с условиями, предпочтениях, а также иную аналогичную информацию, которую Вы предоставляете нам. </p>
+
+						<p><b>Ваши транзакции с нами</b></p>
+
+						<p>Мы собираем или запрашиваем информацию, касающуюся приобретения и/или использования Вами наших продуктов и/или услуг, а также иного взаимодействия с нами. Такая информация может включать, например, сведения о направленных вами запросах или обращениях, предоставленных продуктах и услугах (в том числе сведения о доставке), сведения о контактах и сообщениях и другую подобную информацию.</p>
+
+						<p>Мы можем с соблюдением действующего законодательства осуществлять запись ваших разговоров с центром технической поддержки клиентов или других аналогичных контактов.</p>
+
+						<p><b>Цели обработки персональных данных</b></p>
+
+						<p>ЗАО «Карт Бланш» осуществляет обработку ваших персональных данных для целей, которые описаны в этой Политике. В каждом случае могут применяться одна или одновременно несколько целей. </p>
+
+						<p>предоставление пользователям услуг, включая показ персонализированного содержания;
+						проверка, исследование и анализ, позволяющие поддерживать, защищать и улучшать предоставление услуг;</p>
+						<p>защита прав и собственности компании ЗАО «Карт Бланш» или наших пользователей;
+						разработка продуктов и услуг. </p>
+						<p><b>Передача</b></p>
+
+						<p>Мы не продаем, не передаем в аренду и иными способами не раскрываем ваши персональные данные третьим лицам, если ниже не оговорено противное: </p>
+
+						<p>Согласие — Мы можем передать ваши персональные данные, если вы дали на это свое согласие.</p>
+						<p>Третьи лица — Мы можем передавать ваши персональные данные сторонним компаниям, которые осуществляют по заказу ЗАО «Карт Бланш» обработку персональных данных для целей, описанных в настоящей Политике. Такие компании не вправе использовать ваши персональные данные для других целей, и мы требуем от них действовать в соответствии с этой Политикой и использовать для защиты ваших персональных данных надлежащие меры безопасности.</p>
+						<p>Обязательное раскрытие — Обязательные для исполнения законы могут требовать от ЗАО «Карт Бланш» раскрытия ваших персональных данных. </p>
+						<p><b>Безопасность</b></p>
+
+						<p>ЗАО «Карт Бланш» предпринимает необходимые технические и организационные меры информационной безопасности для защиты данных от несанкционированного доступа, изменения, раскрытия или уничтожения, путем внутренних проверок процессов сбора, хранения и обработки данных и мер безопасности, а также осуществления мер по обеспечению физической безопасности данных для предотвращения несанкционированного доступа к системам, в которых мы храним персональные данные.</p>
+
+						<p>Мы предоставляем доступ к персональным данным только тем работникам, подрядчикам и агентам ЗАО «Карт Бланш», которым эта информация необходима для эксплуатации, разработки и улучшения нашего сайта. Эти лица обязаны выполнять обязательства по соблюдению конфиденциальности и могут подвергнуться взысканию, включая судебное преследование. </p>
+
+						<p><b>Доступ к персональным данным</b></p>
+
+						<p>Мы предпринимаем разумные меры для поддержания точности и актуальности имеющихся у нас персональных данных, а также удаления устаревших и других недостоверных или излишних персональных данных.</p>
+
+						<p>Вы несете ответственность за предоставление нам достоверных сведений, а также за обновление предоставленных данных в случае каких-либо изменений.</p>
+
+						<p><b>Ваши права</b></p>
+
+						<p>В случаях, если вы хотите узнать, какими персональными данными о Вас мы располагаем, либо дополнить, исправить, обезличить или удалить любые неполные, неточные или устаревшие персональные данные, либо хотите прекратить обработку нами Ваших персональных данных для целей рассылки рекламных материалов, прямого маркетинга или проведения исследований рынка, либо имеете другие убедительные законные основания, вы можете в должном порядке и в соответствии с действующим законодательством реализовать такое право, обратившись к нам по приведенному ниже адресу. </p>
+
+						<p>В некоторых случаях (особенно если вы хотите удалить ваши персональные данные или прекратить их обработку) это также может означать, что мы больше не сможем предоставлять Вам услуги. </p>
+
+						<p>Для выполнения таких Ваших запросов ЗАО «Карт Бланш» может потребоваться установить Вашу личность и запросить дополнительную информацию. Кроме того действующее законодательство может устанавливать ограничения и другие условия, касающиеся упомянутых выше Ваших прав. </p>
+
+						<p><b>Изменения настоящей Политики</b></p>
+
+						<p>ЗАО «Карт Бланш» может время от времени изменять настоящую Политику.</p>
+
+						<p>В случае внесения в эту Политику существенных изменений, ЗАО «Карт Бланш» разместит уведомление о таких изменениях в начале этого документа и на странице сайта. Мы рекомендуем время от времени просматривать эту Политику для получения информации о любых изменениях.</p>
+					</div>
+				</template>
+			</div>
+		</div>
+		<!-- POPUPS END -->
+	</div>
+
+
+	<!-- CallTouch START -->
+	<!-- PUT YOUR CODE HERE -->
+	<!-- CallTouch END -->
+
+	<!-- CallKeeper START -->
+	<!-- PUT YOUR CODE HERE -->
+	<!-- CallKeeper END -->
+
+	<!-- CallBackHunter START -->
+	<!-- PUT YOUR CODE HERE -->
+	<!-- CallBackHunter END -->
+
+	<link rel="stylesheet" href="css/main.css">
+	<script src="js/common.js"></script>
+
+</body>
+</html>
