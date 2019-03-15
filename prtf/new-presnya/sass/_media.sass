@@ -1,0 +1,655 @@
+@import "vars"
+
+/*==========  Desktop First  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1024px)
+	main
+		#main-content
+			#main-offer
+				#main-slider
+					.fotorama__wrap
+						.fotorama__stage
+							height: 610px!important
+	/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+	header
+		.nav
+			//position: relative
+			.burger
+				height: 50px
+				width: 40px
+				position: absolute
+				top: 9px
+				right: 9px
+				cursor: pointer
+				.x,
+				.y,
+				.z
+					position: absolute
+					margin: auto
+					top: 0px
+					bottom: 0px
+					background: $brown
+					border-radius: 2px
+					transition: all 200ms ease-out
+				.x,
+				.y,
+				.z
+					height: 3px
+					width: 24px
+				.y
+					top: 16px
+				.z
+					top: 32px
+				.collapse
+					top: 16px
+					background: $brown
+					transition: all 70ms ease-out
+				.rotate30
+					transform: rotate(30deg)
+					transition: all 50ms ease-out
+				.rotate150
+					transform: rotate(150deg)
+					transition: all 50ms ease-out
+				.rotate45
+					transform: rotate(45deg)
+					transition: all 100ms ease-out				
+				.rotate135
+					transform: rotate(135deg)
+					transition: all 100ms ease-out
+			nav
+				position: absolute
+				width: 100%
+				height: 100vh
+				left: 0
+				top: -100vh
+				background: $brown
+				opacity: 0
+				transition: opacity .3s
+				&.open
+					top: 100px
+					opacity: 1
+				ul
+					padding-top: 50px
+					li
+						float: none
+						text-align: center
+						padding: 15px
+						a
+							color: #fff
+							font-size: 24px
+		.header-contacts
+			margin-right: 50px
+		.logo
+			.logo-link
+				width: 500px
+				.logo-address
+					width: 240px
+					margin-top: 21px
+					margin-left: 10px
+	main
+		#main-content
+			#main-offer
+				// .container
+				// 	.border-block
+				// 		width: 100%
+				// 		padding: 25px 90px 35px 25px
+				// 		h1
+				// 			font-size: 42px
+				// 		p
+				// 			font-size: 16px
+				// 			width: 220px
+				// 		.house-ready
+				// 			width: 193px
+				// 	#main-slider
+				// 		left: 265px
+				#main-slider
+					.fotorama__wrap
+						.fotorama__stage
+							height: 610px!important
+						.fotorama__nav-wrap
+							width: 750px
+							.fotorama__nav
+								.fotorama__nav__shaft
+									left: 340px
+					.action-slide
+						.container
+							.border-block
+								width: 100%
+								p
+									width: 260px
+									font-size: 14px
+								.arrow
+									display: none
+							.action-img
+								left: 340px
+							.apartment-prices
+								left: 340px
+				.main-text
+					.ballon
+						display: none
+			#benefits
+				h2
+					font-size: 46px
+				.content
+					.text
+						p
+							font-size: 15px
+		#infrastructure
+			.legend
+				.container
+					.border-block
+						padding: 20px 48px
+					.btn-red
+						display: block
+						width: 50%
+						text-align: center
+						right: 0
+						top: 410px
+		#icons
+			.icon
+				figcaption
+					font-size: 14px
+					br
+						line-height: 20px
+		#plans
+			.headplans
+				.headplan
+					.options
+						top: 100px
+						left: 160px
+						font-size: 12px
+			.aside
+				.picker
+					li
+						font-size: 12px
+						padding-top: 3px
+			.promo
+				p
+					text-align: center
+		#presentation
+			.container
+				.border-block
+					h2
+						font-size: 40px
+						line-height: 46px
+				.presentation-img
+					left: -60px
+		#gallery
+			.gallery-row
+				.slide
+					width: 100%
+					.img
+						height: 50vw
+				.flickity-prev-next-button
+					&.previous
+						left: 0
+						top: 50vw
+					&.next
+						right: 0
+						top: 50vw
+		#mortgage
+			padding: 40px 0 0 0
+			.container
+				.mortgage-img
+					top: -40px
+					left: 280px
+				.border-block
+					width: 100%
+					padding: 25px
+					padding-bottom: 50px
+					h2
+						padding-right: 94px
+					p
+						font-size: 15px
+						width: 230px
+					.banks-row
+						width: calc(100% + 50px)
+						margin-left: -25px
+						margin-right: -25px
+						margin-bottom: 50px
+						.bank
+							margin-right: 0
+							width: 33.33333%
+							.bank-title
+								font-size: 13px
+							.bank-description
+								font-size: 13px
+		#contacts
+			.contacts-logo
+				display: none
+			.contacts-content
+				float: none
+				width: 100%
+				text-align: center
+				p
+					padding-left: 0
+				.btn-red
+					margin-left: 0
+
+	/**/
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 767px)
+	.btn-red,
+	.btn-white
+		font-size: 12px
+	header
+		height: 80px
+		.logo
+			.logo-link
+				width: 140px
+				.logo-address
+					display: none
+				.logo-text
+					font-size: 12px
+					margin-top: 2px
+					margin-left: 0
+				.logo-img
+					width: 62px
+		.nav
+			.burger
+				top: 0
+				right: 0
+			nav
+				&.open
+					top: 80px
+				ul
+					padding-top: 6px
+					li
+						padding: 4px
+						a
+							font-size: 14px
+		.header-contacts
+			position: absolute
+			margin-top: 0
+			right: 10px
+			top: 14px
+			.phone
+				font-size: 14px
+			.popup-link
+				letter-spacing: 2px
+	main
+		#main-content
+			background-size: cover
+			#main-offer
+				padding-top: 0
+				#main-slider
+					.fotorama__wrap
+						.fotorama__stage
+							height: 550px!important
+					.action-slide
+						.container
+							.border-block
+								border-width: 6px
+								padding: 10px 20px
+								height: 490px
+								
+								h1
+									font-size: 28px
+									line-height: 36px
+									padding-right: 0
+								p
+									width: 100%
+									margin-top: 10px
+									margin-bottom: 20px
+									line-height: 20px
+									&.brown
+										margin-top: 10px
+										margin-bottom: 10px
+								.house-ready
+									display: none
+							.action-img
+								display: none
+							.apartment-prices
+								left: 40px
+								width: 100%
+								.apartment
+									font-size: 9px
+									.value
+										font-size: 14px
+							.discount
+								margin-bottom: 40px
+								.text
+									font-size: 21px
+									margin-top: 10px
+					.fotorama__wrap
+						.fotorama__nav-wrap
+							width: 100%
+							margin-top: 10px
+							.fotorama__nav
+								.fotorama__nav__shaft
+									left: 50%
+									transform: translateX(-50%)!important
+									.fotorama__nav__frame
+										&:last-of-type
+											width: 15px
+					// #main-slider
+					// 	left: 0
+					// 	top: 350px
+					// 	padding: 0 20px
+					// 	.fotorama__nav
+					// 		.fotorama__nav__shaft
+					// 			width: 138px
+					// 			right: 0
+					// 			margin: 0 auto
+				.main-text
+					p
+						width: 100%
+						font-size: 16px
+						line-height: 20px
+						margin-top: 100px
+						margin-bottom: 100px
+						&:after,
+						&:before
+							height: 40px
+						&:before
+							top: -55px
+						&:after
+							bottom: -55px
+			#benefits
+				h2
+					font-size: 28px
+					line-height: 36px
+				.content
+					.map
+						display: none
+					.text
+						width: 100%
+		#infrastructure
+			.legend
+				.container
+					.border-block
+						width: calc(100% - 20px)
+						margin: 0 10px
+						padding: 10px
+						h2
+							font-size: 14px
+						ul
+							padding: 0 35px
+							li
+								font-size: 12px
+								margin-bottom: 25px
+								&.kindergarten
+									&:before
+										top: -5px
+										left: -25px
+										width: 30px
+										height: 30px
+								&.school
+									left: 40px
+									&:before
+										top: -5px
+										left: -25px
+										width: 30px
+										height: 30px
+								&.train
+									&:before
+										top: -5px
+										left: -25px
+										width: 30px
+										height: 30px
+								&.shop
+									left: 40px
+									&:before
+										top: -5px
+										left: -25px
+										width: 30px
+										height: 30px
+								&.park
+									&:before
+										top: -5px
+										left: -25px
+										width: 30px
+										height: 30px
+								&.fitness
+									left: 40px
+									&:before
+										top: -5px
+										left: -25px
+										width: 30px
+										height: 30px
+								&.pool
+									margin-bottom: 0
+									&:before
+										top: -5px
+										left: -25px
+										width: 30px
+										height: 30px
+								&.bus
+									left: 40px
+									margin-bottom: 0
+									&:before
+										top: -5px
+										left: -25px
+										width: 30px
+										height: 30px
+					.btn-red
+						width: calc(100% - 20px)
+						top: 500px
+						margin: 0 10px
+		#icons
+			.icon
+				float: none
+				width: 100%
+				margin-bottom: 20px
+				&:last-of-type
+					margin-bottom: 0
+				img
+					float: left
+					width: 30%
+					margin-right: 10px
+				figcaption
+					margin-top: 5px
+					font-size: 12px
+					text-align: left
+		#presentation
+			padding: 50px 0 150px
+			.container
+				.border-block
+					width: 100%
+					padding: 20px
+					h2
+						font-size: 30px
+						margin-bottom: 10px
+					p
+						font-size: 14px
+						line-height: 18px
+					.btn-red
+						position: absolute
+						bottom: -130px
+						display: block
+						margin: 0 auto
+						left: 0
+						right: 0
+						width: 290px
+						text-align: center
+				.presentation-img
+					width: 300px
+					left: 0
+					right: 0
+					margin: 0 auto
+					padding: 50px
+					float: none
+					bottom: -130px!important
+		#plans
+			h2
+				font-size: 30px
+				line-height: 38px
+			.headplans
+				float: right
+				width: 100%
+				.floor-picker
+					text-align: center
+				.headplan
+					.options
+						display: none
+			.aside
+				width: 100%
+				float: right
+				padding-left: 0
+				margin-top: 20px
+				p
+					margin-bottom: 0
+				.picker
+					margin-bottom: 10px
+			.room-plans
+				.room-plan
+					width: 50%
+			.promo
+				p
+					.phone
+						font-size: 16px
+				.btn-row
+					.btn-white
+						display: block
+						margin-right: 0
+						margin-bottom: 10px
+					.btn-red
+						display: block
+		#mortgage
+			.container
+				.mortgage-img
+					display: none
+				.border-block
+					top: 0
+					padding: 10px 20px
+					h2
+						padding-right: 0
+						font-size: 32px
+						text-align: center
+						line-height: 40px
+						margin-bottom: 20px
+					p
+						font-size: 14px
+					.banks-row
+						.bank
+							width: calc(100% - 40px)
+							margin-left: 20px
+							margin-right: 20px
+							margin-bottom: 20px
+							&:last-of-type
+								margin-bottom: 0
+					.btn-red
+						margin-bottom: 10px
+						display: block
+						width: 100%
+		#contacts
+			margin-bottom: 40px
+			margin-top: -50px
+			.contacts-logo
+				display: block
+				float: none
+				width: 100px
+				margin: 0 auto
+			.contacts-content
+				h2
+					padding: 0
+					font-size: 32px
+					line-height: 40px
+					margin-top: 20px
+					margin-bottom: 20px
+				p
+					font-size: 14px
+					&.phone
+						font-size: 16px
+	.popup
+		width: 290px
+		p
+			font-size: 12px
+			padding-top: 0
+			&.title
+				font-size: 22px
+				padding-top: 12px
+				padding-bottom: 0
+		.popup-img
+			display: none
+		.tabs
+			display: none
+		.phone
+			width: 90%
+			height: 40px
+		.submit
+			margin: 0 15px
+			margin-top: 10px
+			padding-bottom: 20px
+			.btn-red
+				width: 100%
+				display: block
+	/**/
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+	.popup
+		width: 290px
+		p
+			font-size: 12px
+			&.title
+				font-size: 22px
+				padding-top: 12px
+		.popup-img
+			margin-bottom: 135px
+			display: block
+			img
+				width: 220px
+			.border-block
+				width: 200px
+				height: 110px
+				top: 20px
+		.tabs
+			width: 95%
+			.tab
+				font-size: 10px
+				&.active
+					&:after
+						top: 37px
+		.phone
+			width: 90%
+			height: 40px
+		.submit
+			margin: 0 15px
+			margin-top: 10px
+			padding-bottom: 20px
+			.btn-red
+				width: 100%
+				display: block
+	/**/
+
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+	/**/
+
+
+/*==========  Mobile First  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px)
+	/**/
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px)
+	/**/
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px)
+	/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px)
+	/**/
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px)
+	/**/
+
