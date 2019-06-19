@@ -1,2 +1,0 @@
-AddDefaultCharset UTF-8
-php_value opcache.revalidate_freq 0
