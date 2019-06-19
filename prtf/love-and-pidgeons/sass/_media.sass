@@ -1,0 +1,481 @@
+@import "vars"
+
+/*==========  Desktop First  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1199px)
+	header
+		.logo
+			width: 90px
+		.nav
+			margin-left: 15px
+		.header-contacts
+			margin-top: 20px
+			.phone
+				a
+					font-size: 14px
+	main
+		#plans
+			.cols
+				.left
+					.floors
+						width: 420px
+						height: 471px
+				.right
+					padding: 30px 0 30px 30px
+					.picker
+						.left-picker
+							width: 55%
+						.right-picker
+							width: 45%
+							.decoration
+								div
+									font-size: 14px
+					#rooms-slider
+						.slide
+							height: 400px
+					.description
+						.col
+							p
+								line-height: 1.6em
+								.value
+									font-size: 18px
+							&:nth-of-type(1)
+								width: 50%
+							&:nth-of-type(2)
+								width: 45%
+					.btns
+						.btn-block
+							&:nth-of-type(1)
+								width: 50%
+							&:nth-of-type(2)
+								width: 45%
+							.btn-blue,
+							.btn
+								font-size: 14px
+		#about
+			.content
+				.gallery
+					#about-gallery
+						.flickity-page-dots
+							bottom: 75px
+		#transport
+			.content
+				.col
+					&:first-of-type
+						width: 100%
+						div
+							width: 100%
+						p
+							font-size: 12px
+					&:last-of-type
+						display: none
+						
+							
+
+	/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 991px)
+	header
+		height: 50px
+		.burger
+			height: 34px
+			width: 24px
+			position: relative
+			top: 0
+			right: 0
+			cursor: pointer
+			float: right
+			display: block
+			.x,
+			.y,
+			.z
+				position: absolute
+				margin: auto
+				top: 0px
+				bottom: 0px
+				background: $red
+				border-radius: 2px
+				transition: all 200ms ease-out
+			.x,
+			.y,
+			.z
+				height: 3px
+				width: 24px
+			.y
+				top: 16px
+			.z
+				top: 32px
+			.collapse
+				top: 16px
+				background: $red
+				transition: all 70ms ease-out
+			.rotate30
+				transform: rotate(30deg)
+				transition: all 50ms ease-out
+			.rotate150
+				transform: rotate(150deg)
+				transition: all 50ms ease-out
+			.rotate45
+				transform: rotate(45deg)
+				transition: all 100ms ease-out				
+			.rotate135
+				transform: rotate(135deg)
+				transition: all 100ms ease-out
+		.nav
+			float: none
+			position: absolute
+			top: 50px
+			background: $blue
+			margin: 0
+			width: 100%
+			left: 0
+			padding: 0 15px
+			transition: all .3s
+			height: 0
+			overflow: hidden
+			&.open
+				height: 100vh
+			nav
+				margin: 40px 0
+			ul
+				text-align: center
+				flex-wrap: wrap
+				padding-left: 0
+				li
+					width: 100%
+					a
+						color: $red
+						font-size: 21px
+						padding: 10px
+						display: block
+						border: 0
+						&:hover,
+						&:focus
+							color: $white
+						&:after
+							display: none
+		.logo
+			width: 75px
+			position: relative
+			z-index: 1			
+		.header-contacts
+			margin-right: 25px
+			margin-top: 6px
+			.flyform-open
+				display: none
+			.phone
+				margin-top: 7px
+				display: block
+				a
+					font-size: 15px
+	main
+		margin-top: 50px
+		#plans
+			background: $white
+			&:before
+				display: none
+			.cols
+				.left
+					display: none
+				.right
+					width: 100%
+					.picker
+						.right-picker
+							.decoration
+								margin-left: 140px
+					.description
+						.col
+							p
+								line-height: 1.6em
+								.value
+									font-size: 18px
+							&:nth-of-type(1)
+								width: 45%
+							&:nth-of-type(2)
+								width: 45%
+					.btns
+						.btn-block
+							&:nth-of-type(1)
+								width: 45%
+								text-align: left
+								
+							&:nth-of-type(2)
+								width: 45%
+		#gallery
+			.gallery-container
+				#gallery-thumbs
+					margin-left: 2px
+					width: calc(100% - 4px)
+		#placement
+			flex-wrap: wrap
+			#map-placement
+				width: 100%
+				height: 400px
+			.map-description
+				width: 100%
+				.tiles
+					margin-top: 25px
+				.descr
+					margin-top: 25px
+				.btn-block
+					margin-top: 25px
+		#mortgage
+			.blue-square
+				width: 50%
+			.tiles
+				width: 100%
+			.btn-block
+				width: 100%
+		#about
+			.container
+				&:before
+					display: none
+			.content
+				.gallery
+					display: none
+				.text
+					width: 100%
+					
+				
+
+	/**/
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 767px)
+	main
+		#main-offer
+			height: 440px
+			h1
+				font-size: 34px
+				margin-top: 100px
+				.first-row
+					left: -60px
+			p
+				font-size: 16px
+				&.upper
+					display: none
+		#plans
+			.cols
+				.right
+					padding: 30px 0
+					.picker
+						.left-picker
+							p
+								font-size: 15px
+						.right-picker
+							p
+								font-size: 15px
+							.decoration
+								margin-left: 0
+								flex-wrap: wrap
+								div
+									width: 100%
+									text-align: right
+									&:first-of-type
+										&:before
+											display: none
+					.description
+						flex-wrap: wrap
+						.col
+							&:first-of-type,
+							&:last-of-type
+								width: 100%
+								margin-bottom: 10px
+					.btns
+						flex-wrap: wrap
+						.btn-block
+							&:nth-of-type(1),
+							&:nth-of-type(2)
+								width: 100%
+								text-align: center
+								.btn,
+								.btn-blue
+									width: 215px
+		#gallery
+			padding: 35px 0
+			h2
+				font-size: 28px
+			.gallery-container
+				#gallery-slider
+					.slide
+						height: 215px
+				#gallery-thumbs
+					position: relative
+					top: 0
+					margin-top: 25px
+					.slide
+						width: 50px
+						height: 50px
+						&:after
+							border-width: 25px
+							border-left-width: 25px
+							border-top-width: 25px
+		#placement
+			.map-description
+				padding: 15px
+				h2
+					font-size: 23px
+					padding-bottom: 10px
+				.tiles
+					.tile
+						width: 60px
+						height: 60px
+						margin: 5px
+				.descr
+					p
+						font-size: 14px
+						.bold
+							font-size: 24px
+				.btn-block
+					text-align: center
+		#mortgage
+			padding: 0
+			overflow-y: hidden
+			.container
+				padding-top: 15px
+				padding-bottom: 15px
+			.blue-square
+				width: 100%
+				height: 100%
+				top: 0
+			h2
+				font-size: 23px
+			.tiles
+				display: block
+				.tile
+					width: 100%
+		#about
+			padding: 35px 0
+			overflow-y: hidden
+			.content
+				.text
+					padding-left: 0
+					h2
+						font-size: 28px
+					ul
+						li
+							font-size: 14px
+		#transport
+			.content
+				.col
+					&:first-of-type
+						background-size: 240%
+						padding: 0
+						h2
+							font-size: 26px
+		#contacts
+			#map
+				height: 300px
+			.container
+				position: relative
+				
+				.contacts-block
+					position: relative
+					width: 100%
+					height: auto
+					.image
+						margin-top: 35px
+					.btn-block
+						margin-bottom: 35px
+	#flyform
+		.body
+			width: 90%
+			&.action
+				.content
+					padding: 20px 30px
+					min-height: auto
+				.close
+					top: -35px
+				&.flyform-0
+					width: 90%
+					.form-title
+						display: none
+					.content
+						padding: 20px 30px
+						.form-elements
+							flex-wrap: wrap
+							width: 100%
+							.input-block
+								width: 100%
+								.input
+									border-color: $blue
+							.submit
+								width: 100%
+								margin-left: 0
+								margin-top: 15px
+								text-align: center
+								.btn-blue
+									width: 100%
+									display: block	
+			.close
+				right: 0
+			.image
+				display: none
+				p
+					display: none
+			.content
+				padding: 20px 30px
+				background: $white!important
+				p
+					&.bold
+						font-size: 18px
+				.form-elements
+					flex-wrap: wrap
+					width: 100%
+					.input-block
+						width: 100%
+						.input
+							border-color: $blue
+					.submit
+						width: 100%
+						margin-left: 0
+						margin-top: 15px
+						text-align: center
+						.btn-blue
+							width: 100%
+							display: block
+
+					
+	/**/
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+	/**/
+
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+	/**/
+
+
+/*==========  Mobile First  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px)
+	/**/
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px)
+	/**/
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px)
+	/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px)
+	/**/
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px)
+	/**/
+
