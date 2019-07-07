@@ -1,0 +1,180 @@
+@import "vars"
+
+/*==========  Desktop First  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1199px)
+	header
+		.header-container
+			.nav
+				padding-left: 0
+	main
+		#main-offer
+			#slider
+				.slide
+					h1,
+					h2
+						width: 100%
+		#about
+			.content
+				&:before
+					left: -482px
+				&:after
+					bottom: -115px 
+				.text
+					ul
+						padding-right: 0
+
+	/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 991px)
+	header
+		.header-container
+			.popup-button
+				padding-left: 220px
+			.burger
+				height: 50px
+				width: 24px
+				position: relative
+				top: -8px
+				right: 0
+				cursor: pointer
+				float: right
+				display: block
+				.x,
+				.y,
+				.z
+					position: absolute
+					margin: auto
+					top: 0px
+					bottom: 0px
+					background: $white
+					border-radius: 2px
+					transition: all 200ms ease-out
+				.x,
+				.y,
+				.z
+					height: 3px
+					width: 24px
+				.y
+					top: 16px
+				.z
+					top: 32px
+				.collapse
+					top: 16px
+					background: $white
+					transition: all 70ms ease-out
+				.rotate30
+					transform: rotate(30deg)
+					transition: all 50ms ease-out
+				.rotate150
+					transform: rotate(150deg)
+					transition: all 50ms ease-out
+				.rotate45
+					transform: rotate(45deg)
+					transition: all 100ms ease-out				
+				.rotate135
+					transform: rotate(135deg)
+					transition: all 100ms ease-out
+			.nav
+				position: absolute
+				top: 0
+				background: $blue
+				margin: 0
+				width: 100%
+				left: 0
+				padding: 0 15px
+				transition: all .3s
+				height: 0
+				overflow: hidden
+				&.open
+					height: 100vh
+				nav
+					margin: 40px 0
+				ul
+					text-align: center
+					flex-wrap: wrap
+					li
+						width: 100%
+						a
+							color: $white
+							font-size: 28px
+							padding: 25px
+							display: block
+							border: 0
+							&:hover,
+							&:focus
+								color: $white
+	main
+		#about
+			.content
+				&:before
+					left: -591px
+				&:after
+					right: -396px
+	/**/
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 767px)
+	.container
+		padding: 0 15px
+	.button
+		padding: 13px 30px 15px
+		font-size: 14px
+	header
+		.header-container
+			.popup-button
+				padding-left: 0
+			.logo
+				width: 150px
+				padding-top: 0
+			.nav
+				ul
+					li
+						a
+							font-size: 18px
+							padding: 5px 15px
+	main
+		#main-offer
+			height: 580px
+			background-position: center bottom
+			#slider
+				.slide
+					height: 400px
+					h1,
+					h2
+						font-size: 21px
+					p
+						font-size: 16px
+						width: 100%
+		#about
+			.content
+				flex-wrap: wrap
+				&:before,
+				&:after
+					display: none
+				.image
+					display: none
+				.text
+					width: 100%
+					padding-left: 0
+					text-align: center
+					h2
+						font-size: 24px
+					ul
+						text-align: left
+	/**/
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+	/**/
+
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+	/**/
+
