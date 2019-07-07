@@ -12,13 +12,6 @@
   src: url("../fonts/CeraRoundPro-Bold.eot");
   src: url("../fonts/CeraRoundPro-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/CeraRoundPro-Bold.woff") format("woff"), url("../fonts/CeraRoundPro-Bold.ttf") format("truetype"); }
 
-@font-face {
-  font-family: "Geometria";
-  font-weight: normal;
-  font-style: normal;
-  src: url("../fonts/Geometria-Medium.eot");
-  src: url("../fonts/Geometria-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/Geometria-Medium.woff") format("woff"), url("../fonts/Geometria-Medium.ttf") format("truetype"); }
-
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
