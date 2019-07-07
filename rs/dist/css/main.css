@@ -1456,12 +1456,12 @@ main #functions {
   .container {
     padding: 0 15px; }
   .button {
-    padding: 13px 30px 15px;
+    padding: 13px 16px 15px;
     font-size: 14px; }
   header .header-container .popup-button {
     padding-left: 0; }
   header .header-container .logo {
-    width: 150px;
+    width: 110px;
     padding-top: 0; }
   header .header-container .nav ul li a {
     font-size: 18px;
