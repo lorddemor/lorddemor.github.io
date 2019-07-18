@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>Ортека</title>
+		<meta name="description" content="">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="img/favicon/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+		<link rel="manifest" href="img/favicon/manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
+		<!-- Chrome, Firefox OS and Opera -->
+		<meta name="theme-color" content="#000">
+		<!-- Windows Phone -->
+		<meta name="msapplication-navbutton-color" content="#000">
+		<!-- iOS Safari -->
+		<meta name="apple-mobile-web-app-status-bar-style" content="#000">
+		<style>body { opacity: 0; overflow-x: hidden; } html { background-color: #fff; }</style>
+		<script src="js/libs.min.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<header>
+				<div class="line-first">
+					<div class="container">
+						<div class="wrapper">
+							<div class="geo">
+								<a href="#" class="geo-picked" v-on:click.prevent="showGeoPicker()">{{pickedCity}}</a>
+								<div class="geo-picker" v-show="showGeo">
+									<ul>
+										<li v-for="city in sets.geo">
+											<a href="#" v-on:click.prevent="changeGeo(city)">{{city}}</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="line-first-menu">
+								<nav>
+									<ul>
+										<li><a href="#">Адреса салонов</a></li>
+										<li><a href="#">Доставка и оплата</a></li>
+										<li><a href="#">Акции</a></li>
+										<li><a href="#">О компании</a></li>
+									</ul>
+								</nav>
+							</div>
+							<div class="account">
+								<a href="#" class="account-module">
+									<img src="img/account.svg" alt="Вход" class="img-responsive">
+									<span class="text">Вход</span>
+								</a>
+								<a href="#" class="account-module">
+									<img src="img/favorit.svg" alt="Избранное" class="img-responsive">
+								</a>
+								<a href="#" class="account-module">
+									<img src="img/cart.svg" alt="Корзина" class="img-responsive">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="line-main">
+					<div class="container">
+						<div class="wrapper">
+							<div class="logo">
+								<img src="img/logo.svg" alt="Ортека" class="img-responsive">
+							</div>
+							<div class="benefits">
+								<div class="benefit">
+									<div class="benefit-icon">23</div>
+									<div class="benefit-text">года<br>на ортопедическом рынке</div>
+								</div>
+								<div class="benefit">
+									<div class="benefit-icon">
+										<img src="img/benefit-store.svg" alt="Салоны" class="img-responsive">
+									</div>
+									<div class="benefit-text"><span class="blue">202 салона</span><br>в России</div>
+								</div>
+								<div class="benefit">
+									<div class="benefit-icon">
+										<img src="img/benefit-doctor.svg" alt="Врачи" class="img-responsive">
+									</div>
+									<div class="benefit-text"><span class="blue">160 кабинетов</span> ортопедической<br>помощи и <span class="blue">282 врача</span> в России</div>
+								</div>
+							</div>
+							<div class="contacts">
+								<p class="sub">Единая ортопедическая служба</p>
+								<a href="tel:+74957755000" class="phone"><img src="img/phone.svg" alt="Телефон" class="img-responsive"><span class="text">8 495 77-55-000</span></a>
+								<a href="#" class="popup-link">Заказать звонок</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="line-menu">
+					<div class="container">
+						<div class="wrapper">
+							<div class="search">
+								<a href="#"><img src="img/search.svg" alt="Поиск" class="img-responsive icon-white"><img src="img/search-black.svg" alt="Поиск" class="img-responsive icon-black"></a>
+							</div>
+							<div class="burger">
+								<a href="#" v-on:click.prevent="showHiddenMenu()">
+									<img src="img/burger.svg" alt="Меню" class="img-responsive icon-white"><img src="img/burger-black.svg" alt="Меню" class="img-responsive icon-black"><span class="text">Каталог</span>
+								</a>
+							</div>
+							<div class="main-menu">
+								<nav>
+									<ul>
+										<li><a href="#">Ортопедическая обувь</a></li>
+										<li><a href="#">Компрессионный трикотаж</a></li>
+										<li><a href="#">Ортопедические стельки</a></li>
+										<li><a href="#">Ортезы и бандажи</a></li>
+										<li><a href="#">Медицинские услуги</a></li>
+									</ul>
+								</nav>
+							</div>
+							<div class="hidden-menu" v-show="showMenu">
+								<nav>
+									<ul>
+										<li><a href="#">Lorem ipsum dolor</a></li>
+										<li><a href="#">Lorem ipsum dolor</a></li>
+										<li><a href="#">Lorem ipsum dolor</a></li>
+										<li><a href="#">Lorem ipsum dolor</a></li>
+										<li><a href="#">Lorem ipsum dolor</a></li>
+									</ul>
+								</nav>
+							</div>
+							<div class="menu-action"><a href="#" class="btn btn-orange">Записаться к врачу</a></div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<main>
+				<section id="main-offer">
+					<div class="container">
+						<h1>Вы ищете<br>индивидуальное решение?</h1>
+						<ul>
+							<li>Мы уже изготовили более 400&nbsp;000 пар индивидуальных стелек</li>
+							<li>В нашем салоне можно изготовить стельку за&nbsp;1&nbsp;час</li>
+							<li>Подарим комфорт Вашим ногам в&nbsp;любой обуви</li>
+						</ul>
+						<form method="POST" name="super" action="#" v-on:submit.prevent="sendForm()">
+							<div class="form-elements">
+								<div class="input">
+									<input type="text" placeholder="Ваше имя" v-model="inputtedName">
+								</div>
+								<div class="input">
+									<input type="tel" :class="[placeholderPhone === 'Укажите Ваш телефон' ? 'redput' : '']" name="phone" v-model="inputtedPhone" v-input-mask data-inputmask="'mask': '+7 (999) 999-99-99'" :placeholder="placeholderPhone">
+									<div class="circle-loader">
+										<div class="checkmark draw"></div>
+									</div>
+								</div>
+								<div class="submit">
+									<button type="submit" class="btn btn-blue">
+									<span class="text">Записаться на&nbsp;диагностику</span>
+									</button>
+								</div>
+							</div>
+							<p>Нажимая на кнопку «Записаться на диагностику», Вы принимаете условия <a href="#">Публичной оферты</a></p>
+						</form>
+					</div>
+				</section>
+				<section id="personality">
+					<div class="container">
+						<div class="wrapper">
+							<div class="image">
+								<img src="img/shoe.png" alt="Каблук" class="img-responsive">
+							</div>
+							<div class="text">
+								<h2>Сохраняем Вашу индивидуальность</h2>
+								<p>Вам знакомо: чувство усталости и тяжести, дискомфорт и боль в различных отделах стоп? Современная медицина подтверждает, что тяжесть, усталость и боль — это самые яркие проявления разных степеней плоскостопия. К другим симптомам этой массовой проблемы относятся отёчность ног, стаптывание каблуков обуви с  одной стороны и сложность при подборе обуви.</p>
+								<p>Хотите найти решение, которое снимает боль, сохраняет  вашу красоту и дарит абсолютный комфорт уже сегодня?</p>
+								<p>Для решения этой и связанных задач опытные <span class="nowrap">врачи-ортопеды</span> и инженеры-специалисты разработали уникальные конструкционные элементы и комбинации  ортопедических стелек ORTMANN-PRO.</p>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section id="video">
+					<div class="container">
+						<div class="wrapper">
+							<div class="poster" v-on:click="playVideo('promovideo')" v-show="!videoIsPlaying"></div>
+							<video id="promovideo" controls="controls" preload="metadata" class="img-responsive">
+								<source src="img/video.ogv" type='video/ogg; codecs="theora, vorbis"'>
+								<source src="img/video.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+								<source src="img/video.webm" type='video/webm; codecs="vp8, vorbis"'>
+							</video>
+						</div>
+					</div>
+				</section>
+				<section id="should-know">
+					<div class="container">
+						<h2><span class="heading-text">Что полезно знать о пользе настоящих индивидуальных ортопедических стелек</span></h2>
+						<div class="content">
+							<div class="text">
+								<p>Индивидуальные ортопедические стельки <span class="nowrap">ORTMANN-PRO</span> создаются согласно системе европейского качества индивидуальных ортопедических стелек и сертифицированы по стандарту ISO 13485:2003 для&nbsp;медицинских изделий.</p>
+								<p>ORTMANN-PRO имеют регистрационное удостоверение на медицинское изделие от Росздравнадзора. Данный документ гарантирует лечебный эффект и позволяет удостовериться в безопасности изделия.</p>
+								<p>Индивидуальные ортопедические стельки <span class="nowrap">ORTMANN-PRO</span> уникальны. Их конструкция учитывает анатомические и функциональные особенности каждой стопы пациента. Амортизируют зону пятки и передний отдел стопы, уменьшая ударную нагрузку  и обеспечивая правильную биомеханику шага.</p>
+							</div>
+							<div class="image">
+								<img src="img/should-know-shoe.png" alt="Ботинок" class="img-responsive">
+							</div>
+						</div>
+						<div class="benefits">
+							<ol>
+								<li>Разгружают передний отдел стопы, возвращая этой зоне естественную арочную архитектуру</li>
+								<li>Поддерживают продольный свод стопы, обеспечивая правильную рессорную функцию</li>
+								<li>Фиксируют пятку в «чашке» каркаса при ходьбе</li>
+								<li>Удерживают лечебные элементы в&nbsp;правильном положении даже при&nbsp;интенсивной ходьбе</li>
+								<li>Специальные торсионы <span class="nowrap">ORTMANN-PRO</span> препятствуют скручиванию стельки для&nbsp;правильной ходьбы</li>
+								<li>Все элементы создают с обувью единую защитную систему стоп</li>
+							</ol>
+						</div>
+					</div>
+				</section>
+				<section id="solution">
+					<div class="container">
+						<div class="wrapper">
+							<div class="text">
+								<h2><span class="heading-text">У нас есть профессиональное индивидуальное решение для здоровья Ваших стоп!</span> </h2>
+								<div class="counter">
+									<div class="text">Мы изготовили</div>
+									<div id="clock"></div>
+									<div class="text">стелек</div>
+								</div>
+							</div>
+							<div class="image">
+								<img src="img/solution.png" alt="Ortmann Pro" class="img-responsive">
+							</div>
+						</div>
+					</div>
+				</section>
+				<section id="personal-insole">
+					<div class="container">
+						<h2>Скан Ваших стоп после&nbsp;проведения диагностики</h2>
+						<div class="tiles tiles-black">
+							<div class="tile">
+								<img src="img/personal-insole-scan-1.png" alt="Скан Ваших стоп" class="img-responsive">
+								<p>Hallux Valgus, бурсит плюснефаллангового сустава, подагрический артрит</p>
+							</div>
+							<div class="tile">
+								<img src="img/personal-insole-scan-2.png" alt="Скан Ваших стоп" class="img-responsive">
+								<p>Варусная установка стоп, вальгусная установка стоп, полая стопа, плоскостопие 1-3 степени</p>
+							</div>
+							<div class="tile">
+								<img src="img/personal-insole-scan-3.png" alt="Скан Ваших стоп" class="img-responsive">
+								<p>Болевой синдром в переднем отделе, натоптыши, поперечное плоскостопие</p>
+							</div>
+							<div class="tile">
+								<img src="img/personal-insole-scan-4.png" alt="Скан Ваших стоп" class="img-responsive">
+								<p>Пяточная шпора, остеохондропатии пяточной и таранной кости</p>
+							</div>
+						</div>
+						<h2>Индивидуальная стелька под&nbsp;Ваши потребности</h2>
+						<div class="tiles tiles-white">
+							<div class="tile">
+								<img src="img/personal-insole-ortmann-1.png" alt="Индивидуальная стелька" class="img-responsive">
+								<p>ORTMANN-PRO LEATHER самая&nbsp;большая линейка метатарзальных пелотов</p>
+							</div>
+							<div class="tile">
+								<img src="img/personal-insole-ortmann-2.png" alt="Индивидуальная стелька" class="img-responsive">
+								<p>ORTMANN-PRO SPORT особая&nbsp;поддержка свода за счет уникальной технологии каркаса</p>
+							</div>
+							<div class="tile">
+								<img src="img/personal-insole-ortmann-3.png" alt="Индивидуальная стелька" class="img-responsive">
+								<p>ORTMANN-PRO COMFORT ультра&nbsp;мягкое покрытие, обеспечивающее правильную амортизацию и поддержку стопы</p>
+							</div>
+							<div class="tile">
+								<img src="img/personal-insole-ortmann-4.png" alt="Индивидуальная стелька" class="img-responsive">
+								<p>ORTMANN-PRO LEATHER SOFT уникальная форма пяточного амортизатора</p>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section id="how-to">
+					<div class="container">
+						<div class="text">
+							<h2><span class="heading-text">Как заказать индивидуальные ортопедические стельки</span></h2>
+							<p>Индивидуальные ортопедические стельки <span class="nowrap">ORTMANN-PRO</span> конструируют на основании <b>персональной</b> консультации специалиста-ортопеда и компьютерной диагностики, позволяющей определить анатомические параметры стопы с точностью до миллиметров и, значит, установить в максимально правильном положении все элементы стельки, каждый из которых обладает лечебными свойствами.</p>
+						</div>
+						<div class="process">
+							<ol>
+								<li>
+									<div class="image"><img src="img/how-to-1.png" alt="Как заказать" class="img-responsive"></div>
+									<span>Запишитесь на консультацию к&nbsp;специалисту-ортопеду</span>
+								</li>
+								<li>
+									<div class="image"><img src="img/how-to-2.png" alt="Как заказать" class="img-responsive"></div>
+									<span>Сделайте компьютерную диагностику стопы</span>
+								</li>
+								<li>
+									<div class="image"><img src="img/how-to-3.png" alt="Как заказать" class="img-responsive"></div>
+									<span>Получите рекомендацию специалиста-ортопеда</span>
+								</li>
+								<li>
+									<div class="image"><img src="img/how-to-4.png" alt="Как заказать" class="img-responsive"></div>
+									<span>Заключите договор на&nbsp;изготовление индивидуальных ортопедических стелек (срок изготовления 7&nbsp;рабочих дней)</span>
+								</li>
+							</ol>
+						</div>
+						<div class="individual">
+							<h2>Программа сопровождения индивидуальных стелек</h2>
+							<ul class="steps">
+								<li class="step"><span class="icon"><span class="number">14</span><br>дней</span><span class="main-text">Осмотр<br>и корректировка</span></li>
+								<li class="step"><span class="icon"><span class="number">3</span><br>мес.</span><span class="main-text">Оценка<br>динамики</span></li>
+								<li class="step"><span class="icon"><span class="number">6</span><br>мес.</span><span class="main-text">Осмотр<br>и рекомендации</span></li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section id="lead">
+					<div class="container">
+						<div class="wrapper">
+							<h2>Вам нужно лучшее решение всего за 30 минут?</h2>
+							<p>Мы знаем, как профессионально сохранить Вашу индивидуальность!</p>
+							<form method="POST" name="super" action="#" v-on:submit.prevent="sendForm()">
+								<div class="form-elements">
+									<div class="input">
+										<input type="text" placeholder="Ваше имя" v-model="inputtedName">
+									</div>
+									<div class="input">
+										<input type="tel" :class="[placeholderPhone === 'Укажите Ваш телефон' ? 'redput' : '']" name="phone" v-model="inputtedPhone" v-input-mask data-inputmask="'mask': '+7 (999) 999-99-99'" :placeholder="placeholderPhone">
+										<div class="circle-loader">
+											<div class="checkmark draw"></div>
+										</div>
+									</div>
+									<div class="submit">
+										<button type="submit" class="btn btn-blue">
+										<span class="text">Записаться на&nbsp;диагностику</span>
+										</button>
+									</div>
+								</div>
+								<p class="small">Нажимая на кнопку «Записаться», Вы принимаете условия <a href="#">Публичной оферты</a></p>
+							</form>
+						</div>
+					</div>
+				</section>
+			</main>
+			<footer>
+				<div class="line-first">
+					<div class="container">
+						<div class="wrapper">
+							<div class="links">
+								<div class="logo"><img src="img/logo.svg" alt="Ортека" class="img-responsive"></div>
+								<div class="links-group">
+									<a href="tel:+74957755000" class="phone">8 495 77-55-000</a>
+									<a href="#" class="popup-link">Заказать звонок</a>
+									<div class="social">
+										<a href="#"><img src="img/social-fb.svg" alt="Facebook" class="img-responsive"></a>
+										<a href="#"><img src="img/social-vk.svg" alt="VK" class="img-responsive"></a>
+										<a href="#"><img src="img/social-inst.svg" alt="Instagram" class="img-responsive"></a>
+										<a href="#"><img src="img/social-yt.svg" alt="YouTube" class="img-responsive"></a>
+									</div>
+								</div>
+								<div class="logo-2"><img src="img/logo-2.svg" alt="Ортомедика" class="img-responsive"></div>
+							</div>
+							<div class="menu">
+								<div class="menu-heading-mobile" v-on:click="toggleFooterMobileMenu()">Покупателям</div>
+								<ul v-show="footerMobileMenu">
+									<li class="menu-heading">Покупателям</li>
+									<li><a href="#">Доставка и оплата</a></li>
+									<li><a href="#">Пункты самовывоза</a></li>
+									<li><a href="#">Обратная связь</a></li>
+									<li><a href="#">Возврат и обмен</a></li>
+									<li><a href="#">Бренды</a></li>
+									<li><a href="#">Подарочные карты</a></li>
+									<li><a href="#">Дисконтная программа</a></li>
+									<li><a href="#">Медицинские услуги</a></li>
+									<li><a href="#">Законодательная карта</a></li>
+									<li><a href="#">Договор оферты</a></li>
+									<li><a href="#">Соглашение на ОПД</a></li>
+									<li><a href="#">Лицензии</a></li>
+									<li><a href="#">Компенсация ДСЗ</a></li>
+									<li><a href="#">Диагностика стопы</a></li>
+									<li><a href="#">Подбор медицинских изделий</a></li>
+									<li><a href="#">Подбор, заказ и коррекция индивидуальных стелек</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="line-second">
+					<div class="container">
+						<div class="wrapper">
+							<p>ООО «НИКАМЕД», 2001 — 2019. Все права защищены<br>Возможны противопоказания — проконсультируйтесь с врачом</p>
+							<div class="logos">
+								<div class="logo-2">
+									<img src="img/logo-2.svg" alt="Ортомедика" class="img-responsive">
+								</div>
+								<div class="logo-3">
+									<a href="#"><img src="img/logo-3.svg" alt="Независимая оценка" class="img-responsive"></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+		<link rel="stylesheet" href="css/main.css">
+		<script src="js/common.js"></script>
+	</body>
+</html>
