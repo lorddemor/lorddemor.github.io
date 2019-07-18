@@ -3011,7 +3011,8 @@ footer {
     header .line-main .wrapper .logo {
       width: 100px; }
   main #main-offer {
-    height: 867px; }
+    height: 867px;
+    background-position-y: -270px; }
     main #main-offer h1 {
       font-size: 34px; }
     main #main-offer ul li {
