@@ -1,0 +1,479 @@
+@import "vars"
+
+@media only screen and (max-width : 1650px)
+	.slider-aside
+		&__text
+			left: 10px
+
+@media only screen and (max-width : 1570px)
+	$container-width: 945px
+
+	.btn
+		font-size: 11px
+		min-width: 195px
+		padding: 12px
+
+	.main-slider
+		width: 864px
+		&__item
+			height: 320px!important
+		&__text
+			width: 465px
+			margin-left: 39px
+			margin-top: 103px
+		&__title
+			font-size: 24px
+			line-height: 32px
+		&__subtitle
+			font-size: 16px
+			line-height: 20px
+			padding-right: 0
+			margin-top: 10px
+		&__image
+			width: 245px
+			margin-left: 14px
+			margin-top: 33px
+		&__number
+			font-size: 200px
+			right: -53px
+			top: -12px
+		.slick-dots
+			left: 41px
+			bottom: 32px
+
+	.slider-aside
+		width: calc(100% - 864px)
+		&--left
+			display: none
+		&__item
+			height: 320px
+		&__text
+			font-size: 10px
+			line-height: 16px
+			left: 16px
+			bottom: 31px
+			padding-right: 38px
+		&__number
+			font-size: 200px
+			right: -40px
+			top: -12px
+
+	.catalog
+		.slick-track
+			left: calc((100vw - 954px) / 2)
+		.slick-arrow
+			&.slick-prev
+				left: 0
+			&.slick-next
+				right: 0
+		&__item
+			width: 472px
+			&:hover,
+			&:focus
+				.catalog__link
+					left: 243px
+		&__image
+			width: 164px
+			height: 256px
+		&__text
+			width: calc(100% - 164px)
+			padding: 33px 20px 10px 16px
+		&__title
+			font-size: 16px
+			line-height: 24px
+		&__subtitle
+			line-height: 20px
+		&__link
+			bottom: 17px
+			left: 223px
+			&:before
+				width: 116px
+				background-position: right
+				left: -140px
+
+	.services
+		padding: 69px 0
+		&__container
+			width: $container-width
+		&__item
+			width: 304px
+			height: 264px
+			padding: 10px 18px
+		&__icon
+			width: 36px
+		&__title
+			font-size: 16px
+			line-height: 22px
+			margin-top: 24px
+		&__text
+			line-height: 20px
+		&__link
+			margin-top: 24px
+	.tabs
+		&__container
+			width: $container-width
+		&__item
+			font-size: 16px
+			line-height: 24px
+			margin-right: 51px
+			padding: 2px 5px 7px
+			&:first-of-type
+				margin-left: -14px
+	.tab-panel
+		padding: 25px 0 45px
+		&__container
+			width: $container-width
+		&__item
+			padding-top: 25px
+		&__title
+			font-size: 16px
+			line-height: 28px
+			margin-bottom: 8px
+		&__text
+			font-size: 14px
+			line-height: 24px
+	.tab-form
+		margin-top: 24px
+		padding: 28px
+		&__title
+			font-size: 20px
+			line-height: 28px
+			margin-bottom: 20px
+		&__label
+			font-size: 14px
+		&__input
+			font-size: 14px
+		&__photos
+			margin-top: 19px
+		&__subtitle
+			font-size: 16px
+			line-height: 28px
+		&__file-name
+			font-size: 12px
+			line-height: 18px
+		&__added
+			margin-top: 11px
+		&__file-delete
+			width: 16px
+			height: 16px
+		&__input-file
+			margin-top: 20px
+			&-description
+				line-height: 18px
+				font-size: 12px
+
+	.news
+		padding: 80px 0 66px
+		.slick-arrow
+			background-size: 10px
+			top: -58px
+			&.slick-prev
+				right: 38px
+			&.slick-next
+				transform-origin: center
+		&__container
+			width: $container-width
+		&__title
+			font-size: 20px
+			line-height: 28px
+			margin-top: 0
+		&__slider
+			margin-top: 19px
+		&__item
+			width: 284px
+			margin-right: 46px
+		&__image
+			height: 231px
+		&__name
+			font-size: 18px
+			margin-top: 13px
+	.brands
+		padding: 25px 0
+		&__container
+			width: $container-width
+		&__title
+			font-size: 20px
+			line-height: 28px
+		&__slider
+			margin-top: 21px
+		&__item
+			font-size: 18px
+			line-height: 28px
+		&__link
+			margin-top: 21px
+			margin-left: 107px
+
+@media only screen and (max-width : 1023px)
+	$container-width: 750px
+
+	.slider-aside
+		&--right
+			display: none
+
+	.main-slider
+		width: 100%
+		&__number
+			display: none
+
+	.catalog
+		.slick-track
+			left: 0
+		&__item
+			width: auto
+			&:not(.slick-active)
+				opacity: 1
+		&__subtitle
+			padding-right: 60px
+
+	.services
+		&__container
+			width: $container-width
+		&__item
+			width: calc((100% - 32px) / 3)
+			height: 315px
+
+	.tabs
+		&__container
+			width: $container-width
+		&__item
+			margin-right: 30px
+			&:first-of-type
+				margin-left: 0
+
+	.tab-panel
+		&__container
+			width: $container-width
+
+	.news
+		&__container
+			width: $container-width
+		&__item
+			width: calc((#{$container-width} - 32px) / 3)
+			margin-right: 16px
+
+	.brands
+		&__container
+			width: $container-width
+
+@media only screen and (max-width : 767px)
+	$container-width: calc(100% - 40px)
+
+	.btn
+		width: 100%
+		padding: 10px
+
+	.main-slider
+		&__item
+			height: 220px!important
+		&__text
+			width: calc(100% - 123px)
+			margin-left: 18px
+			margin-top: 38px
+		&__image
+			width: 172px
+			position: absolute
+			right: -82px
+			margin-top: 19px
+		&__title
+			font-size: 16px
+			line-height: 22px
+			letter-spacing: 0
+		&__subtitle
+			font-size: 14px
+			line-height: 16px
+			margin-top: 3px
+		.slick-dots
+			left: 20px
+			bottom: 16px
+
+	.catalog
+		.slick-arrow
+			width: 33px
+			height: 33px
+		&__item
+			&:hover,
+			&:focus
+				.catalog__link
+					left: 153px
+		&__image
+			width: 91px
+			height: 121px
+		&__text
+			width: calc(100% - 91px)
+			padding: 20px 38px 10px 38px
+		&__subtitle
+			display: none
+		&__title
+			font-size: 14px
+			line-height: 16px
+		&__link
+			font-size: 12px
+			left: 143px
+			&:before
+				width: 80px
+				left: -99px
+				top: 3px
+	.services
+		padding: 40px 0 60px
+		&__container
+			width: $container-width
+		&__item
+			width: 262px
+			height: 262px
+			margin-right: 4px
+			display: flex!important
+		&__title
+			font-size: 14px
+			line-height: 22px
+			margin-top: 6px
+		&__text
+			margin-top: 3px
+		&__link
+			font-size: 12px
+			margin-top: 4px
+		.slick-dots
+			position: absolute
+			list-style-type: none
+			display: flex
+			left: 20px
+			bottom: -4px
+			li
+				button
+					appearance: none
+					font-size: 0
+					border: 0
+					width: 10px
+					height: 10px
+					background-color: #CCCCCC
+					border-radius: 5px
+					cursor: pointer
+					display: block
+					margin-right: 10px
+					transition: width .3s
+				&.slick-active
+					button
+						background-color: $orange
+						width: 28px
+	.tabs
+		&__item
+			width: 100%
+			text-align: left
+			padding: 16px 0 14px
+			border-bottom: 1px solid #CCCCCC
+			&:after
+				background-image: url("data:image/svg+xml,%3Csvg width='11' height='10' viewBox='0 0 11 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 2.50003L5.5 7.50003L1 2.50003' stroke='%23737373' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+				display: block
+				content: ''
+				position: absolute
+				right: 0
+				width: 11px
+				height: 11px
+				top: 23px
+				transform-origin: center
+			&--active
+				font-weight: bold
+				border-color: transparent
+				&:before
+					display: none
+				&:after
+					transform: rotate(180deg)
+			&--mobile
+				display: block
+	.tab-panel
+		background: transparent
+		padding: 0px 0 41px
+		.tabs
+			display: none
+		&__container
+			width: $container-width
+		&__item
+			padding-top: 2px
+			border-bottom: 1px solid #CCCCCC
+		&__title
+			margin-bottom: 3px
+		&__text
+			line-height: 20px
+			br
+				display: none
+			a
+				display: inline-block
+				margin-left: 3px
+
+	.tab-form
+		margin-top: 20px
+		padding: 17px
+		&__title
+			font-size: 16px
+			line-height: 24px
+			margin-bottom: 11px
+		&__row
+			flex-wrap: wrap
+		&__input-block
+			width: 100%
+			margin-bottom: 12px
+			&:last-of-type
+				margin-bottom: 0
+		&__input
+			padding: 7px 14px
+		&__added
+			flex-wrap: wrap
+			margin-top: 5px
+		&__file
+			margin-bottom: 8px
+		&__input-file
+			flex-wrap: wrap
+			margin-top: 8px
+		&__input-file-description
+			margin-left: 0
+			margin-top: 4px
+		&__submit
+			margin-top: 17px
+	.news
+		padding: 0 0 30px
+		&__container
+			width: $container-width
+		&__slider
+			margin-top: 12px
+		&__item
+			margin-right: 0px
+			width: auto
+		&__image
+			height: 227px
+		&__name
+			font-size: 16px
+			line-height: 24px
+		.slick-arrow
+			width: 33px
+			height: 33px
+			top: 127px
+			background-color: #F68E56
+			background-size: auto
+			background-image: url("data:image/svg+xml,%3Csvg width='7' height='11' viewBox='0 0 7 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.5 9.5L1.5 5.5L5.5 1.5' stroke='white' stroke-width='2'/%3E%3C/svg%3E")
+			&:hover,
+			&:focus
+				background-color: $orange
+			&.slick-prev
+				left: -20px
+			&.slick-next
+				right: -20px
+	.brands
+		&__container
+			width: $container-width
+		&__slider
+			margin-top: 13px
+		&__item
+			padding: 0 16px
+		&__link
+			font-size: 12px
+			margin-left: 0
+			margin-top: 12px
+			&:before
+				background-image: url("data:image/svg+xml,%3Csvg width='5' height='9' viewBox='0 0 5 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4.44445 3.97113C4.4348 3.96031 4.4248 3.94971 4.41442 3.93933L1.58599 1.11091C1.2931 0.818012 0.818227 0.818012 0.525334 1.11091C0.232441 1.4038 0.232441 1.87867 0.525334 2.17157L2.88408 4.53031L0.58592 6.82848C0.293027 7.12137 0.293027 7.59624 0.58592 7.88914C0.878814 8.18203 1.35369 8.18203 1.64658 7.88914L4.47501 5.06071C4.7679 4.76782 4.7679 4.29294 4.47501 4.00005C4.46503 3.99007 4.45483 3.98043 4.44445 3.97113Z' fill='%23FF650C'/%3E%3C/svg%3E")
+				width: 5px
+				height: 8px
+				left: 110px
+				top: 7px
+			&:hover,
+			&:focus
+				margin-left: 0
+				color: darken($orange, 10)
