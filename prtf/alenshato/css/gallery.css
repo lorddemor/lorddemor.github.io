@@ -1,0 +1,203 @@
+.gallery {
+    height: 100%;
+    margin-top: 60px;
+    margin-bottom: 120px;
+}
+.gallery-wrap {
+    width: 100%;
+    margin-bottom: 100px;
+}
+.gallery-wrap.reverse {
+    flex-direction: row-reverse;
+}
+
+.gallery-wrap__prev {
+    width: calc((100%/24)*8);
+    flex-direction: column;
+}
+.mr2 {
+    margin-right: calc(100%/24*2);
+    align-items: flex-end;
+}
+.mr25 {
+    margin-right: calc(100%/14*2);
+}
+.ml25 {
+    margin-left: calc(100%/14*2);
+}
+.gallery-wrap__next {
+    width: calc((100%/24)*14);
+}
+.gallery-wrap__next-top {
+    margin-bottom: 100px;
+}
+.gallery-wrap__next-top.reverse {
+    flex-direction: row-reverse;
+}
+.gallery-img {
+    cursor: pointer;
+}
+.gallery-img.min-img {
+    width: auto;
+}
+.fancybox-bg {
+    background-image: url("../pic/bg-fan.jpg") !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.fancybox-is-open .fancybox-bg {
+    opacity: 1;
+}
+.fancybox-button--arrow_right div {
+    background-image: url("../pic/arr-r.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.fancybox-button--arrow_left div {
+    background-image: url("../pic/arr-l.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.fancybox-button--arrow_left div svg,
+.fancybox-button--arrow_right div svg {
+    display: none;
+}
+@media only screen and (max-width: 1600px) {
+    .gallery {
+        margin-top: 44px;
+        margin-bottom: 88px;
+    }
+    .gallery-wrap__next-top {
+        margin-bottom: 76px;
+    }
+    .gallery-wrap {
+        margin-bottom: 73px;
+    }
+}
+@media only screen and (max-width: 1399px) {
+    .gallery {
+        margin-top: 40px;
+        margin-bottom: 68px;
+    }
+    .gallery-wrap__next-top {
+        margin-bottom: 57px;
+    }
+    .gallery-wrap {
+        margin-bottom: 54px;
+    }
+}
+@media only screen and (max-width: 1055px) {
+    .gallery {
+        margin-top: 28px;
+        margin-bottom: 48px;
+    }
+    .gallery-wrap__next-top,
+    .gallery-wrap {
+        margin-bottom: 48px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .gallery {
+        margin-top: 24px;
+        margin-bottom: 16px;
+    }
+    .gallery-wrap__next-top {
+        margin-bottom: 0;
+    }
+    .gallery-wrap {
+        margin-bottom: 0;
+    }
+    .gallery-img {
+        margin-bottom: 48px;
+        width: 50%;
+    }
+    .gallery-wrap {
+        flex-direction: column;
+    }
+    .gallery-wrap__prev {
+        margin-right: 0;
+        width: 100%;
+        flex-direction: row;
+    }
+    .gallery-wrap.reverse {
+        flex-direction: column;
+    }
+    .gallery-wrap__next {
+        width: 100%;
+    }
+    .gallery-wrap__next-top {
+        flex-direction: row-reverse;
+    }
+    .gallery-wrap__next-top.reverse {
+        flex-direction: row-reverse;
+    }
+    .ml25 {
+        margin-left: 0;
+    }
+    .mr25 {
+        margin-right: 0;
+    }
+    .bg-i{
+        min-height: 290px;
+    }
+    .gallery-img.min-img {
+        width: calc(50% - 78px);
+        margin: auto 0;
+        padding-bottom: 48px;
+    }
+    .gallery-wrap__next {
+        margin-bottom: 48px;
+    }
+    .gallery-wrap__next-bottom .bg-i {
+        max-height: 50px;
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 700px) {
+    .bg-i{
+        min-height: 230px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .bg-i{
+        min-height: 190px;
+    }
+    .gallery-img.min-img {
+        width: 40%;
+    }
+}
+@media only screen and (max-width: 480px) {
+    .gallery-img {
+        margin-bottom: 24px;
+    }
+    .gallery-img.min-img {
+        padding-bottom: 24px;
+    }
+    .gallery-wrap__next {
+        margin-bottom: 24px;
+    }
+    .gallery-img {
+        width: 100%;
+    }
+    .gallery-wrap__prev {
+        flex-direction: column;
+    }
+    .gallery-wrap__next-top {
+        flex-direction: column;
+    }
+    .gallery-wrap__next-top.reverse {
+        flex-direction: column;
+    }
+    .gallery-img.min-img{
+        width: 100%;
+    }
+    .bg-i{
+        min-height: 338px;
+        max-height: 338px;
+        width: 100%;
+    }
+    .gallery-wrap__next-bottom .bg-i {
+        max-height: 100%;
+        width: 100%;
+    }
+}

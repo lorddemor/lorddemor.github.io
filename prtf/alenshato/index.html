@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>AlenShato - Главная</title>
+	<style>body { opacity: 0; overflow-x: hidden; } html { background-color: #fff; }</style>
+	<script src="js/libs/jquery-3.4.1.min.js"></script>
+	<script src="js/libs/vue.js"></script>
+	<script src="js/libs/slick.min.js"></script>
+	<script src="js/libs/inputmask/inputmask.dependencyLib.js"></script>
+	<script src="js/libs/inputmask/inputmask.js"></script>
+	<script src="js/libs/inputmask/jquery.inputmask.js"></script>
+	<script src="js/libs/sticky-sidebar.min.js"></script>
+	<script src="https://api-maps.yandex.ru/2.1/?apikey=bb00e433-dde0-4b90-8119-9180f9857854&lang=ru_RU" type="text/javascript">
+	</script>
+	<script>
+		window.vm = {};
+	</script>
+</head>
+<body>
+<header id="header" class="header">
+	<div class="container">
+		<div class="header__menu">
+			<button class="header__menu-btn"></button>
+		</div>
+		<div class="header__contacts">
+			<a href="tel:+79777065550" class="header__phone">+7 (977) <b>706-55-50</b></a>
+			<a href="#" class="header__popup popup-back-call">Заказать обратный звонок</a>
+		</div>
+		<a href="/" class="header__logo">
+			<img src="./pic/header-logo.svg" alt="AlenShato" class="img-responsive">
+		</a>
+		<a href="#" class="header__inst"></a>
+		<div class="header__order">
+			<a href="#" class="btn">Записаться</a>
+		</div>
+	</div>
+	<div class="main-menu">
+		<div class="main-menu__shadow"></div>
+		<button class="main-menu__close"></button>
+		<div class="main-menu__logo">
+			<img src="./pic/main-menu-logo.svg" alt="AlenShato" class="img-responsive">
+		</div>
+		<nav class="main-menu__menu">
+			<ul>
+				<li><a href="#">Услуги</a></li>
+				<li><a href="#">Галерея</a></li>
+				<li><a href="#" data-scroll-to="contacts">Контакты</a></li>
+			</ul>
+		</nav>
+		<div class="main-menu__contacts">
+			<a href="tel:+79777065550">+7 (977) <b>706-55-50</b></a>
+			<a href="mailto:mail@alenshato.ru">mail@alenshato.ru</a>
+		</div>
+		<div class="main-menu__address">ул. Александры Монаховой, д. 43 к. 1 </div>
+		<div class="main-menu__order">
+			<button class="btn btn--white">Онлайн-запись</button>
+		</div>
+	</div>
+</header>
+<main>
+	<section id="main-offer" class="main-offer">
+		<div class="main-offer__bg">
+			<div class="main-offer__bg--left"></div>
+			<div class="main-offer__bg--right"></div>
+		</div>
+		<div class="main-offer__logo">
+			<img src="./pic/logo.png" alt="AlenShato" class="img-responsive">
+		</div>
+		<div class="main-offer__nav">
+			<a href="#" class="main-offer__link main-offer__link--left"><span class="main-offer__link-text">Мужчинам</span></a>
+			<a href="#" class="main-offer__link main-offer__link--right"><span class="main-offer__link-text">Женщинам</span></a>
+		</div>
+		<div class="main-offer__address">ул. Александры Монаховой, д. 43 к. 1</div>
+		<div class="main-offer__cursor">
+			<svg width="107" height="105" viewBox="0 0 107 105" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<circle cx="51" cy="54" r="50.5" stroke="white"/>
+				<circle cx="56" cy="51" r="50.5" stroke="white"/>
+				<path d="M71 54L66 51.1132V56.8868L71 54ZM31 54.5H66.5V53.5H31V54.5Z" fill="white"/>
+			</svg>
+		</div>
+	</section>
+	<section id="benefits" class="benefits">
+		<div class="container">
+			<div class="benefits__photo">
+				<div class="benefits__slider">
+					<div class="benefits__slider-item"
+						 style="background-image: url(./pic/benefits-slider-item.jpg)"
+						 onclick="vm.viewer.openPopup(['./pic/benefits-slider-item.jpg', './pic/benefits-slider-item.jpg', './pic/benefits-slider-item.jpg'], 0)"
+					></div>
+					<div class="benefits__slider-item"
+						 style="background-image: url(./pic/benefits-slider-item.jpg)"
+						 onclick="vm.viewer.openPopup(['./pic/benefits-slider-item.jpg', './pic/benefits-slider-item.jpg', './pic/benefits-slider-item.jpg'], 1)"
+					></div>
+					<div class="benefits__slider-item"
+						 style="background-image: url(./pic/benefits-slider-item.jpg)"
+						 onclick="vm.viewer.openPopup(['./pic/benefits-slider-item.jpg', './pic/benefits-slider-item.jpg', './pic/benefits-slider-item.jpg'], 2)"
+					></div>
+				</div>
+				<div class="benefits__counter">
+					<span class="benefits__current">01</span> / <span class="benefits__all">01</span>
+				</div>
+			</div>
+			<div class="benefits__article">
+				<h2 class="benefits__title">Территория безупречного качества и профессионального сервиса!</h2>
+				<p class="benefits__subtitle">В салоне AlenShato</p>
+				<p class="benefits__text">Эффективность процедур, красивый дизайн интерьера, ощущение заботы в мелочах — это причины стать гостем beauty салона AlenShato. Мастера перед работой проходят специальную подготовку, благодаря которой качество услуг остаётся на высшем уровне.</p>
+				<p class="benefits__text">Больше не нужно мучаться с выбором салона красоты! Мы предлагаем полный комплекс процедур для идеального преображения и хорошего отдыха.</p>
+			</div>
+		</div>
+	</section>
+	<section id="actions" class="actions">
+		<div class="container">
+			<div class="actions__slider">
+				<div class="actions__item">
+					<div class="actions__description">
+						<div class="actions__bage">Акция</div>
+						<h2 class="actions__title">-10% по клубной карте</h2>
+						<p class="actions__text">Всем гостям на открытии beauty салона будет вручена клубная карта. Она дает скидку 10% на любую первую услугу.</p>
+						<div class="actions__link">
+							<a href="#" class="btn btn--white">Записаться</a>
+						</div>
+					</div>
+					<div class="actions__image" style="background-image: url(./pic/actions-item.jpg)"></div>
+				</div>
+				<div class="actions__item">
+					<div class="actions__description">
+						<div class="actions__bage">Акция</div>
+						<h2 class="actions__title">-10% по клубной карте</h2>
+						<p class="actions__text">Всем гостям на открытии beauty салона будет вручена клубная карта. Она дает скидку 10% на любую первую услугу.</p>
+						<div class="actions__link">
+							<a href="#" class="btn btn--white">Записаться</a>
+						</div>
+					</div>
+					<div class="actions__image" style="background-image: url(./pic/actions-item.jpg)"></div>
+				</div>
+				<div class="actions__item">
+					<div class="actions__description">
+						<div class="actions__bage">Акция</div>
+						<h2 class="actions__title">-10% по клубной карте</h2>
+						<p class="actions__text">Всем гостям на открытии beauty салона будет вручена клубная карта. Она дает скидку 10% на любую первую услугу.</p>
+						<div class="actions__link">
+							<a href="#" class="btn btn--white">Записаться</a>
+						</div>
+					</div>
+					<div class="actions__image" style="background-image: url(./pic/actions-item.jpg)"></div>
+				</div>
+				<div class="actions__item">
+					<div class="actions__description">
+						<div class="actions__bage">Акция</div>
+						<h2 class="actions__title">-10% по клубной карте</h2>
+						<p class="actions__text">Всем гостям на открытии beauty салона будет вручена клубная карта. Она дает скидку 10% на любую первую услугу.</p>
+						<div class="actions__link">
+							<a href="#" class="btn btn--white">Записаться</a>
+						</div>
+					</div>
+					<div class="actions__image" style="background-image: url(./pic/actions-item.jpg)"></div>
+				</div>
+				<div class="actions__item">
+					<div class="actions__description">
+						<div class="actions__bage">Акция</div>
+						<h2 class="actions__title">-10% по клубной карте</h2>
+						<p class="actions__text">Всем гостям на открытии beauty салона будет вручена клубная карта. Она дает скидку 10% на любую первую услугу.</p>
+						<div class="actions__link">
+							<a href="#" class="btn btn--white">Записаться</a>
+						</div>
+					</div>
+					<div class="actions__image" style="background-image: url(./pic/actions-item.jpg)"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="services" class="services">
+		<div class="container services__container">
+			<div class="services__main">
+				<div class="services__sidebar">
+					<div class="services__sidebar-inner">
+						<h2 class="services__title">Наши услуги</h2>
+						<p class="services__text">Наши мастера работают над каждым образом, словно над изящным произведением искусства, чувствуя вашу индивидуальность, неповторимый характер и неуловимое настроение.</p>
+						<div class="services__main-link">
+							<a href="#" class="btn">Все услуги</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="services__list">
+				<div class="services__item">
+					<div class="services__image" style="background-image: url(./pic/services-1.jpg)"></div>
+					<div class="services__description">
+						<h3 class="services__service">Брови и ресницы</h3>
+						<div class="services__number">01</div>
+						<p class="services__text">У нас вы можете подобрать: идеальную форму бровей, их правильное цветовое оформление, добавить необходимой выразительности взгляду, за счет- наращивания ресниц.</p>
+						<div class="services__pricing">
+							<div class="services__pricing-item">
+								<span class="services__pricing-value">Стоимость</span>
+								<span class="services__pricing-value">от 3 000 ₽</span>
+							</div>
+						</div>
+						<div class="services__link">
+							<a href="#" class="btn">Записаться</a>
+						</div>
+					</div>
+				</div>
+				<div class="services__item">
+					<div class="services__image" style="background-image: url(./pic/services-2.jpg)"></div>
+					<div class="services__description">
+						<h3 class="services__service">Ногтевой сервис</h3>
+						<div class="services__number">02</div>
+						<p class="services__text">Мы используем лучшие средства с высоким содержанием питательных ингредиентов, чтобы ваша кожа оставалась невероятно нежной, а визит к нам всегда ассоциировался с полноценным спа-ритуалом.</p>
+						<div class="services__pricing">
+							<div class="services__pricing-item">
+								<span class="services__pricing-value">Стоимость</span>
+								<span class="services__pricing-value">от 3 000 ₽</span>
+							</div>
+						</div>
+						<div class="services__link">
+							<a href="#" class="btn">Записаться</a>
+						</div>
+					</div>
+				</div>
+				<div class="services__item">
+					<div class="services__image" style="background-image: url(./pic/services-3.jpg)"></div>
+					<div class="services__description">
+						<h3 class="services__service">Стилисты</h3>
+						<div class="services__number">03</div>
+						<p class="services__text">У нас вы можете подобрать: идеальную форму бровей, их правильное цветовое оформление, добавить необходимой выразительности взгляду, за счет- наращивания ресниц.</p>
+						<div class="services__pricing">
+							<div class="services__pricing-item">
+								<span class="services__pricing-value">Стоимость</span>
+								<span class="services__pricing-value">от 3 000 ₽</span>
+							</div>
+						</div>
+						<div class="services__link">
+							<a href="#" class="btn">Записаться</a>
+						</div>
+					</div>
+				</div>
+				<div class="services__item">
+					<div class="services__image" style="background-image: url(./pic/services-4.jpg)"></div>
+					<div class="services__description">
+						<h3 class="services__service">Макияж</h3>
+						<div class="services__number">04</div>
+						<p class="services__text">Мы используем лучшие средства с высоким содержанием питательных ингредиентов, чтобы ваша кожа оставалась невероятно нежной, а визит к нам всегда ассоциировался с полноценным спа-ритуалом.</p>
+						<div class="services__pricing">
+							<div class="services__pricing-item">
+								<span class="services__pricing-value">Стоимость</span>
+								<span class="services__pricing-value">от 3 000 ₽</span>
+							</div>
+						</div>
+						<div class="services__link">
+							<a href="#" class="btn">Записаться</a>
+						</div>
+					</div>
+				</div>
+				<div class="services__item">
+					<div class="services__image" style="background-image: url(./pic/services-5.jpg)"></div>
+					<div class="services__description">
+						<h3 class="services__service">Шугаринг</h3>
+						<div class="services__number">05</div>
+						<p class="services__text">У нас вы можете подобрать: идеальную форму бровей, их правильное цветовое оформление, добавить необходимой выразительности взгляду, за счет- наращивания ресниц.</p>
+						<div class="services__pricing">
+							<div class="services__pricing-item">
+								<span class="services__pricing-value">Стоимость</span>
+								<span class="services__pricing-value">от 3 000 ₽</span>
+							</div>
+						</div>
+						<div class="services__link">
+							<a href="#" class="btn">Записаться</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="interior" class="interior">
+		<div class="container">
+			<h2 class="interior__title">Интерьер салона</h2>
+			<div class="interior__photos">
+				<div class="interior__item"
+					 style="background-image: url(./pic/interior-1.jpg)"
+					 onclick="vm.viewer.openPopup(['./pic/interior-1.jpg', './pic/interior-2.jpg', './pic/interior-3.jpg', './pic/interior-1.jpg', './pic/interior-2.jpg', './pic/interior-3.jpg'], 0)"
+				></div>
+				<div class="interior__item"
+					 style="background-image: url(./pic/interior-2.jpg)"
+					 onclick="vm.viewer.openPopup(['./pic/interior-1.jpg', './pic/interior-2.jpg', './pic/interior-3.jpg', './pic/interior-1.jpg', './pic/interior-2.jpg', './pic/interior-3.jpg'], 1)"
+				></div>
+				<div class="interior__item"
+					 style="background-image: url(./pic/interior-3.jpg)"
+					 onclick="vm.viewer.openPopup(['./pic/interior-1.jpg', './pic/interior-2.jpg', './pic/interior-3.jpg', './pic/interior-1.jpg', './pic/interior-2.jpg', './pic/interior-3.jpg'], 2)"
+				></div>
+				<div class="interior__item"
+					 style="background-image: url(./pic/interior-1.jpg)"
+					 onclick="vm.viewer.openPopup(['./pic/interior-1.jpg', './pic/interior-2.jpg', './pic/interior-3.jpg', './pic/interior-1.jpg', './pic/interior-2.jpg', './pic/interior-3.jpg'], 3)"
+				></div>
+				<div class="interior__item"
+					 style="background-image: url(./pic/interior-2.jpg)"
+					 onclick="vm.viewer.openPopup(['./pic/interior-1.jpg', './pic/interior-2.jpg', './pic/interior-3.jpg', './pic/interior-1.jpg', './pic/interior-2.jpg', './pic/interior-3.jpg'], 4)"
+				></div>
+				<div class="interior__item"
+					 style="background-image: url(./pic/interior-3.jpg)"
+					 onclick="vm.viewer.openPopup(['./pic/interior-1.jpg', './pic/interior-2.jpg', './pic/interior-3.jpg', './pic/interior-1.jpg', './pic/interior-2.jpg', './pic/interior-3.jpg'], 5)"
+				></div>
+			</div>
+			<div class="interior__text">
+				<p>Нашей главной целью было создать идеальную рабочую зону для мастеров и комфортное пространство для гостей. Установили мягкие кожаные кресла, в которых хочется утонуть на весь день, большие зеркала с подсветкой, эргономичные парикмахерские мойки и многое другое.<br>Персонал и гости замечают, что в AlenShato легко думается: приходят свежие идеи и интересные мысли. Такого эффекта добились благодаря минималистичному дизайну, высоким потолкам, светлым стенам, деревянным элементам и растениям.<br>Тут, как в лучших ресторанах Москвы, хочется рассматривать каждую деталь интерьера.</p>
+			</div>
+		</div>
+	</section>
+	<section id="instagram" class="instagram">
+		<div class="container">
+			<div class="instagram__article">
+				<p class="instagram__bage">MEN&WOMAN</p>
+				<h2 class="instagram__title">Наш Instagram</h2>
+				<p class="instagram__text">Каждый день мы выкладываем интересные идеи ухода и анонсы акций. Подписывайся, чтобы ничего не пропустить!</p>
+				<div class="instagram__link">
+					<a href="#" class="btn btn--white">Подписаться</a>
+				</div>
+			</div>
+		</div>
+		<div class="instagram__photos">
+			<div class="instagram__scroll-area">
+				<div class="instagram__item"
+					 onclick="vm.viewer.openPopup(['./pic/instagram-1.jpg', './pic/instagram-2.jpg', './pic/instagram-3.jpg', './pic/instagram-1.jpg', './pic/instagram-2.jpg'], 0)"
+				>
+					<img src="./pic/instagram-1.jpg" alt="Instagram" class="img-responsive">
+				</div>
+				<div class="instagram__item"
+					 onclick="vm.viewer.openPopup(['./pic/instagram-1.jpg', './pic/instagram-2.jpg', './pic/instagram-3.jpg', './pic/instagram-1.jpg', './pic/instagram-2.jpg'], 1)"
+				>
+					<img src="./pic/instagram-2.jpg" alt="Instagram" class="img-responsive">
+				</div>
+				<div class="instagram__item"
+					 onclick="vm.viewer.openPopup(['./pic/instagram-1.jpg', './pic/instagram-2.jpg', './pic/instagram-3.jpg', './pic/instagram-1.jpg', './pic/instagram-2.jpg'], 2)"
+				>
+					<img src="./pic/instagram-3.jpg" alt="Instagram" class="img-responsive">
+				</div>
+				<div class="instagram__item"
+					 onclick="vm.viewer.openPopup(['./pic/instagram-1.jpg', './pic/instagram-2.jpg', './pic/instagram-3.jpg', './pic/instagram-1.jpg', './pic/instagram-2.jpg'], 3)"
+				>
+					<img src="./pic/instagram-1.jpg" alt="Instagram" class="img-responsive">
+				</div>
+				<div class="instagram__item"
+					 onclick="vm.viewer.openPopup(['./pic/instagram-1.jpg', './pic/instagram-2.jpg', './pic/instagram-3.jpg', './pic/instagram-1.jpg', './pic/instagram-2.jpg'], 4)"
+				>
+					<img src="./pic/instagram-2.jpg" alt="Instagram" class="img-responsive">
+				</div>
+			</div>
+			<div class="instagram__progress"></div>
+		</div>
+	</section>
+	<section id="inline-form" class="inline-form">
+		<div class="container">
+			<div class="inline-form__column inline-form__article">
+				<div class="inline-form__image">
+					<img src="./pic/inline-form-image.jpg" alt="Нужна помощь?" class="img-responsive">
+				</div>
+				<div class="inline-form__text">
+					<h2 class="inline-form__title">Нужна помощь?</h2>
+					<p class="inline-form__par">Заполните форму и мы свяжемся с вами в ближайшее время и ответим на Ваши вопросы.</p>
+					<p class="inline-form__phone">или позвоните нам по телефону<br><a href="tel:+79116676565">+7 (911) <b>667-65-65</b></a></p>
+				</div>
+			</div>
+			<div class="inline-form__column inline-form__form">
+				<form action="#" class="form">
+					<div class="form__row">
+						<div class="form__input-block">
+							<input type="text"
+								   :class="['form__input', !form.name.valid ? 'form__input--invalid' : '']"
+								   id="inline-form__name"
+								   v-model="form.name.value"
+								   autocomplete="name"
+								   @keyup="form.name.valid = true"
+								   placeholder="Имя">
+							<div class="form__input-error" v-if="!form.name.valid">заполните поле</div>
+						</div>
+						<div class="form__input-block">
+							<input type="tel"
+								   :class="['form__input', !form.phone.valid ? 'form__input--invalid' : '']"
+								   id="inline-form__phone"
+								   name="phone"
+								   placeholder="Телефон"
+								   @keyup="form.phone.valid = true"
+								   v-input-mask
+								   data-inputmask="'mask': '+7 (999) 999-99-99'"
+								   v-model="form.phone.value"
+								   autocomplete="tel">
+							<div class="form__input-error" v-if="!form.phone.valid">заполните поле</div>
+						</div>
+					</div>
+					<div class="form__input-block">
+						<textarea class="form__input"
+								  placeholder="Вопрос"
+								  v-model="form.message.value"
+								  rows="1"></textarea>
+					</div>
+					<div class="inline-form__submit">
+						<div class="form__btn">
+							<button type="submit" @click.prevent="sendForm()" class="btn btn--white">Отправить</button>
+						</div>
+						<div :class="['form__agreement', !form.agreement.valid ? 'form__agreement--error' : '']">
+							<input type="checkbox"
+								   name="inline-form__agreement"
+								   id="inline-form__agreement"
+								   @change="form.agreement.valid = true"
+								   v-model="form.agreement.value">
+							<label for="inline-form__agreement"></label>
+							<div class="form__agreement-text">Нажимая кнопку «Отправить», я даю свое согласие на обработку <a href="#">персональных данных</a>.</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+	<section id="contacts" class="contacts">
+		<div class="container">
+			<div class="contacts__row">
+				<div class="contacts__title">
+					<h2>Как с нами связаться</h2>
+					<p>Звоните и пишите нам, заходите в гости, или заполните форму и мы сами свяжемся с вами и постараемся ответить на все ваши вопросы.</p>
+				</div>
+				<div class="contacts__info-block">
+					<div class="contacts__info">
+						<p class="contacts__address">ул. Александры Монаховой, д. 43 к. 1</p>
+						<p class="contacts__time">09:00 – 22:00</p>
+					</div>
+					<div class="contacts__info">
+						<a href="tel:+79777065550" class="contacts__phone">+7 (977) 706-55-50</a>
+						<a href="mailto:mail@alenshato.ru" class="contacts__email">mail@alenshato.ru</a>
+					</div>
+				</div>
+			</div>
+			<div id="contacts__map" class="contacts__map"></div>
+		</div>
+	</section>
+</main>
+<footer id="footer" class="footer">
+	<div class="container">
+		<div class="footer__row">
+			<div class="footer__col">
+				<button class="btn">Онлайн-запись</button>
+			</div>
+			<nav class="footer__menu">
+				<ul>
+					<li><a href="#">Мужчинам</a></li>
+					<li><a href="#">Женщинам</a></li>
+					<li><a href="#">Услуги</a></li>
+					<li><a href="#">Прайс лист</a></li>
+					<li><a href="#">Контакты</a></li>
+				</ul>
+			</nav>
+			<div class="footer__col footer__contacts">
+				<a href="#" class="footer__instagram"></a>
+				<a href="tel:+79777065550" class="footer__phone">+7 (977) 706-55-50</a>
+				<a href="#" class="footer__order popup-back-call">Заказать обратный звонок</a>
+			</div>
+		</div>
+		<div class="footer__row">
+			<div class="footer__col">
+				<a href="mailto:mail@alenshato.ru" class="footer__email">mail@alenshato.ru</a>
+				<p class="footer__address">ул. Александры Монаховой, д. 43 к. 1 </p>
+			</div>
+			<div class="footer__col footer__policy">
+				<a href="#">Политика конфиденциальности</a>
+			</div>
+			<div class="footer__col footer__disclaimer">
+				<p>2021 © AlenShato<br>Все права защищены</p>
+			</div>
+			<div class="footer__col footer__siart"></div>
+		</div>
+	</div>
+</footer>
+<button class="scroll-top" id="scroll-top"></button>
+<!-- TEMPLATES -->
+<!-- POPUP START -->
+<div id="popup" :class="['popup', open ? 'popup--open' : '']" v-cloak>
+	<div class="popup__body">
+		<button class="popup__close" title="Закрыть" @click.prevent="closePopup()"></button>
+		<template v-if="!sent">
+			<h2 class="popup__title">Обратный звонок</h2>
+			<p class="popup__text">Заполните форму и мы вам перезвоним.</p>
+			<form action="#" class="popup__form">
+				<div class="form__input-block">
+					<input type="text"
+						   :class="['form__input', !form.name.valid ? 'form__input--invalid' : '']"
+						   id="popup__name"
+						   v-model="form.name.value"
+						   @keyup="form.name.valid = true"
+						   autocomplete="name"
+						   placeholder="Имя">
+					<div class="form__input-error" v-if="!form.name.valid">заполните поле</div>
+				</div>
+				<div class="form__input-block">
+					<input type="tel"
+						   :class="['form__input', !form.phone.valid ? 'form__input--invalid' : '']"
+						   id="popup__phone"
+						   name="phone"
+						   placeholder="Телефон"
+						   @keyup="form.phone.valid = true"
+						   v-input-mask
+						   data-inputmask="'mask': '+7 (999) 999-99-99'"
+						   v-model="form.phone.value"
+						   autocomplete="tel">
+					<div class="form__input-error" v-if="!form.phone.valid">заполните поле</div>
+				</div>
+				<div class="form__btn">
+					<button type="submit" class="btn btn--white" @click.prevent="sendForm()">Отправить</button>
+				</div>
+				<div :class="['form__agreement', !form.agreement.valid ? 'form__agreement--error' : '']">
+					<input type="checkbox"
+						   name="popup__agreement"
+						   id="popup__agreement"
+						   @change="form.agreement.valid = true"
+						   v-model="form.agreement.value">
+					<label for="popup__agreement"></label>
+					<div class="form__agreement-text">Нажимая кнопку «Отправить», я даю свое согласие на обработку <a href="#">персональных данных</a>.</div>
+				</div>
+			</form>
+		</template>
+		<div class="popup__thx" v-else>
+			<h2 class="popup__title">Спасибо!</h2>
+			<p class="popup__text">Ваша заявка отправлена.</p>
+		</div>
+	</div>
+</div>
+<!-- POPUP END -->
+<!-- VIEWER START -->
+<div id="viewer" :class="['viewer', open ? 'viewer--open' : '']" v-cloak>
+	<button class="viewer__close" @click="closePopup()" title="Закрыть"></button>
+	<div class="container">
+		<div class="viewer__slider">
+			<div class="viewer__item" v-for="img in photos">
+				<img :src="img" alt="Галерея интерьера" class="img-responsive">
+			</div>
+		</div>
+	</div>
+</div>
+<!-- VIEWER END -->
+<script src="js/scripts.js"></script>
+<link rel="stylesheet" href="css/style.css">
+</body>
+</html>
