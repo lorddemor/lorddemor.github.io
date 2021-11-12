@@ -1,0 +1,238 @@
+@import "vars"
+
+@media only screen and (max-width : 1300px)
+	.container
+		width: 1026px
+
+	.main-banner
+		&__wrapper
+			&:before
+				left: -91px
+			&:after
+				right: -90px
+
+	.faq
+		.slick-list
+			margin: 0 0 0 -20px
+
+
+@media only screen and (max-width : 1030px)
+	.container
+		width: 810px
+
+	.h2
+		font-size: 32px
+
+	.main-banner
+		&__wrapper
+			padding: 30px 40px
+
+			&:before
+				left: -100px
+				top: 80px
+
+			&:after
+				right: -54px
+
+		&__title
+			font-size: 48px
+
+		&__text
+			font-size: 16px
+
+		&__links
+			flex-wrap: wrap
+			width: 326px
+			margin-left: auto
+			margin-right: auto
+			margin-top: 24px
+
+		&__link
+			margin-bottom: 6px
+
+			&:nth-of-type(2n)
+				margin-right: 0
+
+	.join
+		padding: 40px 0 20px
+
+		&__subtitle
+			margin-bottom: 5px
+
+		&__link
+			width: 46px
+			height: 46px
+
+	.faq
+		padding: 20px 0
+
+		.slick-arrow
+			display: none!important
+
+	.help
+		padding: 20px 0 40px
+
+	.article
+		&__wrapper
+			max-width: 100%
+
+
+@media only screen and (max-width : 1023px)
+	.container
+		width: 750px
+
+	.h2
+		font-size: 30px
+
+	.main-banner
+		&__wrapper
+			&:before
+				width: 170px
+				left: 0
+				top: 93px
+
+			&:after
+				bottom: -32px
+				right: -40px
+				width: 212px
+
+	.join
+		&__wrapper
+			padding: 20px 30px
+
+		&__subtitle
+			font-size: 14px
+			margin-bottom: 0
+
+	.faq
+		.container
+			width: 100%
+			padding: 0
+
+		.slick-list
+			padding-left: calc((100vw - 720px) / 2)
+			margin: 0
+
+
+@media only screen and (max-width : 767px)
+	body
+		font-size: 13px
+		line-height: 1.4em
+
+	.container
+		width: 100%
+
+	.h2
+		font-size: 18px
+		line-height: 1.2em
+
+	.main-banner
+		padding-top: 20px
+
+		&__wrapper
+			padding: 15px
+
+			&:before,
+			&:after
+				display: none
+
+		&__title
+			font-size: 24px
+
+		&__text
+			width: 100%
+			font-size: 14px
+
+		&__link
+			padding: 10px 0
+
+	.join
+		padding: 20px 0 10px
+
+		&__wrapper
+			flex-wrap: wrap
+
+		&__text
+			width: 100%
+
+		&__subtitle,
+		&__title
+			text-align: center
+
+		&__subtitle
+			font-size: 12px
+
+		&__links
+			flex-wrap: wrap
+			justify-content: space-between
+			width: 100%
+			margin-top: 15px
+
+		&__link
+			margin-left: 0
+
+	.faq
+		padding: 10px 0
+
+		.slick-list
+			padding-left: 15px
+
+		&__slider
+			margin-top: 0
+
+		&__item
+			width: 264px
+			min-height: 124px
+			margin-right: 6px
+
+		&__text
+			h3
+				font-size: 16px
+			p
+				font-size: 13px
+
+		&__image
+			width: 80px
+
+	.help
+		padding: 0 0 20px
+
+		&__title
+			margin-bottom: 20px
+
+		&__item
+			padding: 15px 36px 15px 15px
+
+		&__subtitle
+			font-size: 16px
+
+		&__text
+			max-width: 100%
+
+	.article
+		&__title
+			h1
+				font-size: 18px
+
+		&__link
+			&--green
+				padding: 15px
+				font-size: 14px
+
+@media only screen and (max-width : 375px)
+	.main-banner
+		&__links
+			width: 100%
+			justify-content: center
+
+		&__link
+			margin-right: 0
+
+	.join
+		&__links
+			width: 158px
+			margin-left: auto
+			margin-right: auto
+
+		&__link
+			margin-bottom: 6px
